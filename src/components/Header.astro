@@ -1,0 +1,51 @@
+<header>
+  <div class ="logo-container">
+    <a href="../">
+      <img src="../src/assets/logo.svg" alt="Luxiss" />
+    </a>
+    <h1>Luxiss</h1>
+  </div>
+  <div class="nav-links">
+    <a href="../">Accueil</a>
+    <a href="../games/">Jeux Vidéo</a>
+    <a href="../web/">Sites Web</a>
+    <button id="contact-trigger">Contact</button>
+    <!-- <a href="../contact.html">Contact</a> -->
+  </div>
+</header>
+
+<div id="contact-popup" class="hidden">
+  <div class="popup-content">
+    <p>[Versa] &gt; Voici les différents moyens de contacter Luxiss :</p>
+    <p class="popup-links">
+      <a class="popup-link email" href="mailto:luxiss.pro@gmail.com" target="_blank">luxiss.pro@gmail.com</a>
+      <a class="popup-link instagram" href="https://www.instagram.com/luxiss_verse/" target="_blank">@luxiss_verse</a>
+      <a class="popup-link linkedin" href="https://www.linkedin.com/in/lucas-musy-204861253/" target="_blank">Lucas Musy</a>
+    </p>
+    <div class="popup-buttons">
+      <button id="contact-close">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  const contactTrigger = document.getElementById("contact-trigger");
+  const contactPopup = document.getElementById("contact-popup");
+  const contactClose = document.getElementById("contact-close");
+
+  contactTrigger?.addEventListener("click", (e) => {
+    e.preventDefault();
+    contactPopup?.classList.remove("hidden");
+  });
+
+  contactClose?.addEventListener("click", () => {
+    contactPopup?.classList.add("hidden");
+  });
+
+  // fermer si clic en dehors
+  contactPopup?.addEventListener("click", (e) => {
+    if (e.target === contactPopup) {
+      contactPopup.classList.add("hidden");
+    }
+  });
+</script>

@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Luxiss - Accueil">
+  <h2>Bienvenue dans le Luxiverse</h2>
+  <p class="ia-voice">[Versa] &gt; Je vous invite à explorer les fragments de ma mémoire.</p>
+
+  <div class="list-fragments">
+    <a href="/introduction" class="fragment" data-name="Introduction"><p>Introduction</p></a>
+    <a href="/games" class="fragment" data-name="Jeux Vidéo"><p>Jeux Vidéo</p></a>
+    <a href="/web" class="fragment" data-name="Sites Web"><p>Sites Web</p></a>
+    <a href="/competences" class="fragment" data-name="Compétences"><p>Compétences</p></a>
+    <a href="/identity" class="fragment" data-name="À propos"><p>À propos</p></a>
+    <button data-name="Contact" id="contact-fragment"><p>Contact</p></button>
+    <!-- <a href="/contact" class="fragment" data-name="Contact"><p>Contact</p></a> -->
+  </div>
+
+  <!-- Pop-up statique -->
+  <div id="popup" class="hidden">
+    <div class="popup-content">
+      <p id="popup-text"></p>
+      <div class="popup-buttons">
+        <button id="popup-confirm">Valider</button>
+        <button id="popup-cancel">Annuler</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" is:inline>
+        const contactFragment = document.getElementById("contact-fragment");
+
+    contactFragment?.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.getElementById("contact-popup")?.classList.remove("hidden");
+    });
+    
+    let currentFragment = null;
+
+    const popup = document.getElementById('popup');
+    const popupText = document.getElementById('popup-text');
+    const confirmBtn = document.getElementById('popup-confirm');
+    const cancelBtn = document.getElementById('popup-cancel');
+
+    document.querySelectorAll('.fragment').forEach(frag => {
+      frag.addEventListener('click', e => {
+        e.preventDefault();
+        currentFragment = frag;
+        const name = frag.dataset.name;
+        const isLink = frag.tagName === 'A' && frag.getAttribute('href');
+
+        if (isLink) {
+          popupText.textContent = `[Versa] > Souhaitez-vous accéder au fragment mémoire : ${name} ?`;
+          confirmBtn.style.display = "inline-block";
+        } else {
+          popupText.textContent = `[Versa] > Fragment mémoire "${name}" actuellement indisponible.`;
+          confirmBtn.style.display = "none";
+        }
+
+        popup.classList.remove('hidden');
+      });
+    });
+
+    cancelBtn.addEventListener('click', () => {
+      popup.classList.add('hidden');
+      currentFragment = null;
+    });
+
+    confirmBtn.addEventListener('click', () => {
+      if (currentFragment && currentFragment.tagName === 'A') {
+        const href = currentFragment.getAttribute('href');
+        if (href) window.location.href = href;
+      }
+      popup.classList.add('hidden');
+      currentFragment = null;
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,52 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { sites } from "../../data/sites";
+
+export function getStaticPaths() {
+  return sites.map(web => ({
+    params: { slug: web.slug }
+  }));
+}
+
+const { slug } = Astro.params;
+const web = sites.find(g => g.slug === slug);
+
+if (!web) {
+  throw new Error(`Site introuvable : ${slug}`);
+}
+---
+
+<BaseLayout title={`Luxiss - ${web.name}`}>
+
+  <div class="project-details">
+    <div class="project-title">
+      <h2>{web.name}</h2>
+      <p class="ia-voice">
+        [Versa] &gt; Fragment mémoire : {web.nickname}
+      </p>
+    </div>
+
+    {/* Description */}
+    {web.description.map((block, i) => (
+      <section class="project-block">
+        <img src={block.image} />
+        <p>{block.text}</p>
+      </section>
+    ))}
+
+    {/* Infos techniques */}
+    <section class="project-infos">
+      <h3>Informations techniques</h3>
+      <ul>
+        <li><strong>Technologies :</strong> {web.tech.join(", ")}</li>
+        <li><strong>Cadre :</strong> {web.status}</li>
+        <li><strong>Type de site :</strong> {web.type}</li>
+        <li><strong>Durée :</strong> {web.duration}</li>
+      </ul>
+    </section>
+  </div>
+
+  <a href="/web" id="enter-button" class="back-link">
+    <p>Retour aux projets</p>
+  </a>
+</BaseLayout>

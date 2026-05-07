@@ -1,0 +1,89 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { games } from "../../data/games";
+
+export function getStaticPaths() {
+  return games.map(game => ({
+    params: { slug: game.slug }
+  }));
+}
+
+const { slug } = Astro.params;
+const game = games.find(g => g.slug === slug);
+
+if (!game) {
+  throw new Error(`Jeu introuvable : ${slug}`);
+}
+---
+
+<BaseLayout 
+  title={`Luxiss - ${game.name}`} 
+  currentPage="original-page"
+  gameSlug={game.slug}
+>
+
+  <div class="project-details">
+    <div class="project-title">
+      <h2>{game.name}</h2>
+      <p class="ia-voice">
+        [Versa] &gt; Fragment mémoire : {game.nickname}
+      </p>
+    </div>
+
+    {/* Description */}
+    {game.description.map((block, i) => (
+      <section class="project-block">
+        <img src={block.image} />
+        <p>{block.text}</p>
+      </section>
+    ))}
+
+    {/* Infos techniques */}
+    <section class="project-infos">
+      <h3>Informations techniques</h3>
+      <ul>
+        <li><strong>Technologies :</strong> {game.tech.join(", ")}</li>
+        <li><strong>Cadre :</strong> {game.status}</li>
+        <li><strong>Genre :</strong> {game.genre}</li>
+        <li><strong>Durée :</strong> {game.duration}</li>
+      </ul>
+    </section>
+
+    {/* Téléchargements */}
+    <section id={`${game.slug}-download`} class="download-section">
+      <h3>Téléchargements</h3>
+      <p>Voici les versions disponibles du jeu {game.name} :</p>
+
+      <div class="version-list">
+      {game.downloads.map(v => (
+        <div class="version-card" data-type={v.unfinished ? "unfinished" : undefined}>
+          {v.unfinished && <div class="coming-soon">Indisponible pour le moment</div>}
+          <div class="content">
+            <div></div>
+          <p>Version : {v.version}</p>
+          <p>Techno : {v.techno}</p>
+          <p>{v.note}</p>
+          </div>
+          {!v.unfinished && v.link && (
+            <a href={v.link} class="download-btn" download>Télécharger</a>
+          )}
+        </div>
+      ))}
+      </div>
+    </section>
+  </div>
+
+  {/* Boutons latéraux */}
+  <div class="side-buttons">
+    <button id="toggle-colors" class="setting-btn">Changer de palette</button>
+    {game.wiki && (
+      <a href={game.wiki} class="setting-btn">
+        <p>Accéder au Wiki</p>
+      </a>
+    )}
+  </div>
+
+  <a href="/games" id="enter-button" class="back-link">
+    <p>Retour aux projets</p>
+  </a>
+</BaseLayout>

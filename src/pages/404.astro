@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import errorAvatar from "../scripts/error_avatar?url";
+---
+
+<BaseLayout title="Luxiss - Accueil">
+  <div id="projects-page">
+    <h2>Erreur 404</h2>
+      <p class="ia-voice">
+        [Versa] &gt; Fragment mémoire inconnu : Faille du Luxiverse
+      </p>
+      <div id="identity-interface">
+        <p>Vous vous êtes égarés dans le Luxiverse, veuiller revenir en lieu sûr</p>
+        <canvas id="error-canvas" width="300" height="400"></canvas>
+      </div>
+    <a href="/" id="enter-button" class="back-link">
+      <p>Retour au Luxiverse</p>
+    </a>
+  </div>
+  <script type="module" src={errorAvatar}></script>
+</BaseLayout>

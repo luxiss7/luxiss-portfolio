@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Luxiss - Introduction">
+  <div id="main-interface">
+    <!-- Zone dialogue Versa -->
+    <div id="boot-screen">
+      <p id="boot-text"></p>
+
+      <div id="hub">
+        <button id="enter-button">OK</button>
+      </div>
+    </div>
+  </div>
+  <button id="skip-intro">Passer l’intro</button>
+
+  <script type="module" is:inline>
+    const messages = [
+      "[???] > Initialisation du Luxiverse…",
+      "[???] > Synchronisation des fragments mémoriels.",
+      "[???] > Connexion établie.",
+      "[???] > Bienvenue, visiteur.",
+      "[Versa] > Je suis Versa, l’intelligence artificielle de ce système.",
+      "[Versa] > Vous êtes actuellement dans le Luxiverse.",
+      "[Versa] > Il s’agit de la mémoire virtuelle de Luxiss.",
+      "[Versa] > Chaque fragment représente une part de son identité, de ses projets ou de ses systèmes.",
+      "[Versa] > Je serai votre guide durant cette exploration.",
+      "[Versa] > Lorsque vous êtes prêt, vous pouvez entrer dans la mémoire."
+    ];
+
+    let step = 0;
+
+    const textEl = document.getElementById("boot-text");
+    const mainBtn = document.getElementById("enter-button");
+    const skipBtn = document.getElementById("skip-intro");
+
+    function updateDialogue() {
+      textEl.textContent = messages[step];
+
+      if (step === messages.length - 1) {
+        mainBtn.textContent = "Entrer dans la mémoire";
+      }
+    }
+
+    updateDialogue();
+
+    mainBtn.addEventListener("click", () => {
+      if (step < messages.length - 1) {
+        step++;
+        updateDialogue();
+      } else {
+        window.location.href = "/";
+      }
+    });
+
+    skipBtn.addEventListener("click", () => {
+      window.location.href = "/";
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { sites } from "../../data/sites";
+---
+
+<BaseLayout title="Luxiss - Sites Web">
+  <div id="projects-page">
+    <div class="project-title">
+      <h2>Fragments Projets : Sites Web</h2>
+      <p class="ia-voice">
+        [Versa] &gt; Accès aux projets de sites web par Luxiss.
+      </p>
+    </div>
+
+    <div id="filters">
+      <button class="filter-button active" data-filter="all">Tous</button>
+      <button class="filter-button" data-filter="cours">Cours</button>
+      <button class="filter-button" data-filter="perso">Perso</button>
+      <button class="filter-button" data-filter="avenir">À venir</button>
+    </div>
+
+    <section id="project-grid">
+      {sites.map(web => (
+        <a
+          href={`/web/${web.slug}`}
+          class="project-card"
+          data-status={web.status}
+        >
+          <div
+            class="cover"
+            style={`background-image:url(/src/assets/web/${web.slug}/cover.png)`}
+          ></div>
+          <div class="content">
+            <h3>{web.name}</h3>
+            <p>{web.shortDescription}</p>
+            <span class="tag">{web.status}</span>
+          </div>
+        </a>
+      ))}
+    </section>
+  </div>
+  <a href="/" id="enter-button">
+    <p>Retour à l'accueil</p>
+  </a>
+
+  <script>
+    const buttons = document.querySelectorAll(".filter-button");
+    const cards = document.querySelectorAll(".project-card");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          card.style.display =
+            filter === "all" || card.dataset.status === filter
+              ? "block"
+              : "none";
+        });
+      });
+    });
+  </script>
+</BaseLayout>

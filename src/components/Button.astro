@@ -1,0 +1,11 @@
+---
+// src/components/Button.astro
+const { text, color = 'purple', page } = Astro.props;
+---
+
+<button
+  class={`popup-button`}
+  data-page={page}
+>
+  {text}
+</button>

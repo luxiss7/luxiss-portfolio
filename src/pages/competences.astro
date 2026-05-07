@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import skillRank from "../scripts/skill_rank?url";
+import skillAvatar from "../scripts/skill_avatar?url";
+
+const skills = [
+    { name: "HTML/CSS", xp: 2300, category: "dev" },
+    { name: "JavaScript", xp: 1500, category: "dev" },
+    { name: "Unity", xp: 1017, category: "dev" },
+    { name: "C#", xp: 906, category: "dev" },
+    { name: "Astro", xp: 75, category: "dev" },
+
+    { name: "Blender", xp: 30, category: "creation" },
+    { name: "Pixel Art", xp: 160, category: "creation" },
+    { name: "Game Design", xp: 110, category: "creation" },
+    { name: "UI/UX", xp: 600, category: "creation" },
+
+    { name: "Esprit d'équipe", xp: 165, category: "soft" },
+    { name: "Créativité", xp: 280, category: "soft" },
+    { name: "Autonomie", xp: 250, category: "soft" },
+];
+---
+
+<BaseLayout title="Luxiss - Compétences">
+    <div id="skills-page">
+        <div class="skill-title">
+        <h2>Fragment : Compétences</h2>
+        <p class="ia-voice">
+            [Versa] &gt; Accès aux capacités actuelles de Luxiss.
+        </p>
+        </div>
+        <div id="skills-page-content">
+            <!-- COLONNE GAUCHE -->
+            <div id="skills-list">
+                <div id="filters">
+                    <button class="filter-button active" data-filter="all">Tous</button>
+                    <button class="filter-button" data-filter="dev">Dev</button>
+                    <button class="filter-button" data-filter="creation">Art</button>
+                    <button class="filter-button" data-filter="soft">Humain</button>
+                </div>
+                <div id="skills-scroll">
+                    {skills.map(skill => (
+                    <div class="skill-card" data-xp={skill.xp} data-category={skill.category}>
+                        <h2>{skill.name}</h2>
+                        <p class="level-display"></p>
+                        <div class="xp-bar">
+                        <div class="xp-fill"></div>
+                        </div>
+                        <p class="xp-display"></p>
+                    </div>
+                    ))}
+                </div>
+            </div>
+
+            <!-- COLONNE DROITE -->
+            <div id="avatar-section">
+            <canvas id="avatar-canvas" width="300" height="400"></canvas>
+
+            <div id="avatar-buttons">
+                <button id="spin-btn">Tourner</button>
+                <button id="attack-btn">Attaquer</button>
+            </div>
+            </div>
+        </div>
+        
+        <a href="/" id="enter-button">
+            <p>Retour à l'accueil</p>
+        </a>
+    </div>
+
+    <!-- RANG -->
+    <div id="rank-container">
+      <div id="rank-icon">
+        <p>Rang actuel :</p>
+        <img id="rank-image" src="" alt="Rank" />
+        <div id="rank-text"></div>
+        </div>
+
+      <div id="rank-popup">
+        <h3>Système de rang</h3>
+        <p>Chaque rang progresse de I à V.</p>
+        <p>Après V, passage au rang supérieur.</p>
+        <ul>
+            <li> <img id="rank-small-icon" src="../src/assets/ranks/bois.png" alt="Bois" />Bois</li>
+            <li> <img id="rank-small-icon" src="../src/assets/ranks/pierre.png" alt="Pierre" />Pierre</li>
+            <li> <img id="rank-small-icon" src="../src/assets/ranks/fer.png" alt="Fer" />Fer</li>
+            <li> <img id="rank-small-icon" src="../src/assets/ranks/bronze.png" alt="Bronze" />Bronze</li>
+            <li> <img id="rank-small-icon" src="../src/assets/ranks/argent.png" alt="Argent" />Argent</li>
+            <li> <img id="rank-small-icon" src="../src/assets/ranks/or.png" alt="Or" />Or</li>
+            <li> <img id="rank-small-icon" src="../src/assets/ranks/platine.png" alt="Platine" />Platine</li>
+            <li> <img id="rank-small-icon" src="../src/assets/ranks/diamant.png" alt="Diamant" />Diamant</li>
+            <li> <img id="rank-small-icon" src="../src/assets/ranks/ruthenium.png" alt="Ruthénium" />Ruthénium</li>
+            <li> <img id="rank-small-icon" src="../src/assets/ranks/luxerite.png" alt="Luxerite" />Luxerite</li>
+        </ul>
+      </div>
+    </div>
+
+    <script type="module" src={skillRank}></script>
+    <script type="module" src={skillAvatar}></script>
+</BaseLayout>

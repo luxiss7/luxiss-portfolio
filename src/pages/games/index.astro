@@ -1,0 +1,66 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { games } from "../../data/games";
+---
+
+<BaseLayout title="Luxiss - Jeux">
+  <div id="projects-page">
+    <div class="project-title">
+      <h2>Fragments Projets : Jeux Vidéo</h2>
+      <p class="ia-voice">
+        [Versa] &gt; Accès aux simulations interactives du Luxiverse.
+      </p>
+    </div>
+
+    <div id="filters">
+      <button class="filter-button active" data-filter="all">Tous</button>
+      <button class="filter-button" data-filter="cours">Cours</button>
+      <button class="filter-button" data-filter="perso">Perso</button>
+      <button class="filter-button" data-filter="avenir">À venir</button>
+    </div>
+
+    <section id="project-grid">
+      {games.map(game => (
+        <a
+          href={`/games/${game.slug}`}
+          class="project-card"
+          data-status={game.status}
+        >
+          <div
+            class="cover"
+            style={`background-image:url(/src/assets/games/${game.slug}/cover.png)`}
+          ></div>
+          <div class="content">
+            <h3>{game.name}</h3>
+            <p>{game.shortDescription}</p>
+            <span class="tag">{game.status}</span>
+          </div>
+        </a>
+      ))}
+    </section>
+  </div>
+  <a href="/" id="enter-button">
+    <p>Retour à l'accueil</p>
+  </a>
+
+  <script>
+    // help TypeScript know element types so dataset and style are available
+    const buttons = document.querySelectorAll<HTMLButtonElement>(".filter-button");
+    const cards = document.querySelectorAll<HTMLElement>(".project-card");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          card.style.display =
+            filter === "all" || card.dataset.status === filter
+              ? "block"
+              : "none";
+        });
+      });
+    });
+  </script>
+</BaseLayout>

@@ -1,0 +1,28 @@
+---
+const { message, showValidate = true } = Astro.props;
+---
+
+<div id="popup-overlay">
+  <div>
+    <p>{message}</p>
+    <div>
+      {showValidate && <button id="popup-validate">Valider</button>}
+      <button id="popup-cancel">Annuler</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const overlay = document.getElementById('popup-overlay');
+  const btnCancel = document.getElementById('popup-cancel');
+  const btnValidate = document.getElementById('popup-validate');
+
+  btnCancel?.addEventListener('click', () => {
+    overlay?.remove();
+  });
+
+  btnValidate?.addEventListener('click', () => {
+    // Redirection de test : ici tu peux remplacer par une vraie page
+    window.location.href = '/introduction';
+  });
+</script>
