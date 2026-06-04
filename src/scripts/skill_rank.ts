@@ -82,7 +82,7 @@
     const img = document.getElementById("rank-image") as HTMLImageElement | null;
     const text = document.getElementById("rank-text");
 
-    if (img) img.src = `../src/assets/ranks/${normalized}.png`;
+    if (img) img.src = `../images//ranks/${normalized}.png`;
     if (text) text.textContent = `${rankName} ${division}`;
   }
 

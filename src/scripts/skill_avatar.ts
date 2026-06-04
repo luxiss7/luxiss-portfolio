@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
     attack: new Image()
   };
 
-  sprites.idle.src = "../src/assets/avatar/idle.png";
-  sprites.spin.src = "../src/assets/avatar/spin.png";
-  sprites.attack.src = "../src/assets/avatar/attack.png";
+  sprites.idle.src = "../images//avatar/idle.png";
+  sprites.spin.src = "../images//avatar/spin.png";
+  sprites.attack.src = "../images//avatar/attack.png";
 
   const spriteData: Record<SpriteState, { frames: number }> = {
     idle: { frames: 0 },

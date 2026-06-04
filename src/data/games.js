@@ -73,7 +73,7 @@ export const games = [
         version: "0.1.0",
         techno: "Processing",
         note: "Prototype de base",
-        link: "#"
+        link: "../assets/games/downloads/laced-together-0.1.0.zip"
       },
       {
         version: "0.2.0",
@@ -125,7 +125,7 @@ export const games = [
         version: "0.1.0",
         techno: "React",
         note: "Version officielle avec deux mini-jeux",
-        link: "#"
+        link: "../assets/games/downloads/barcade-0.1.0.zip"
       }
     ]
   },
@@ -161,7 +161,7 @@ export const games = [
         version: "0.1.0",
         techno: "Unity",
         note: "Version officielle avec interactions RFID",
-        link: "#"
+        link: "../assets/games/downloads/qui-vole-un-oeuf-0.1.0.zip"
       },
       {
         version: "0.2.0",
