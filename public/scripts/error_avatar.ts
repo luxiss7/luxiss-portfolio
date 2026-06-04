@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const frameSpeed = 18;
 
   const sprite = new Image();
-  sprite.src = "../images/avatar/error.png";
+  sprite.src = "/images/avatar/error.png";
 
   let totalFrames = 0;
 
