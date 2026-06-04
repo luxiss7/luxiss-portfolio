@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const canvas = document.getElementById("error-canvas") as HTMLCanvasElement;
-  if (!canvas) return;
+  const canvas = document.getElementById("error-canvas");
+  if (!canvas || !(canvas instanceof HTMLCanvasElement)) return;
 
   const ctx = canvas.getContext("2d");
   if (!ctx) return;

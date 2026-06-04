@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const canvas = document.getElementById("avatar-canvas") as HTMLCanvasElement;
-  if (!canvas) return;
+  const canvas = document.getElementById("avatar-canvas");
+  if (!canvas || !(canvas instanceof HTMLCanvasElement)) return;
 
   const ctx = canvas.getContext("2d");
   if (!ctx) return;
@@ -11,8 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   canvas.width = FRAME_SIZE * SCALE;
   canvas.height = FRAME_SIZE * SCALE;
 
-  type SpriteState = "idle" | "spin" | "attack";
-  let currentState: SpriteState = "idle";
+  let currentState = "idle";
   let frame = 0;
   let frameTimer = 0;
   const frameSpeed = 18;
@@ -27,13 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
   sprites.spin.src = "../images/avatar/spin.png";
   sprites.attack.src = "../images/avatar/attack.png";
 
-  const spriteData: Record<SpriteState, { frames: number }> = {
+  const spriteData = {
     idle: { frames: 0 },
     spin: { frames: 0 },
     attack: { frames: 0 }
   };
 
-  function calculateFrames(img: HTMLImageElement, state: SpriteState) {
+  function calculateFrames(img, state) {
     spriteData[state].frames = img.height / FRAME_SIZE;
   }
 
@@ -43,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function draw() {
     if (!ctx) return;
-    
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     const sprite = sprites[currentState];
