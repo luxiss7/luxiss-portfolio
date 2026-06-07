@@ -5,7 +5,8 @@ import Footer from '../components/Footer.astro';
 
 const {
   title = 'Luxiss',
-  currentPage = 'original-page'
+  currentPage = 'original-page',
+  robots = null
 } = Astro.props;
 ---
 
@@ -13,6 +14,7 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {robots && <meta name="robots" content={robots} />}
     <link 
       rel="stylesheet" 
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 

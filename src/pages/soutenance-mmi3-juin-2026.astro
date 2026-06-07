@@ -1,0 +1,581 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Soutenance MMI 2026" currentPage="soutenance-mmi3-juin-2026" robots="noindex">
+  <style is:global>
+    body[data-page="soutenance-mmi3-juin-2026"] header {
+      margin-top: 2rem;
+    }
+
+    body[data-page="soutenance-mmi3-juin-2026"] header .logo-container {
+      display: none !important;
+    }
+  </style>
+  <style>
+    :root {
+      --lx-accent-color: #ff6e30;
+      --lx-accent-light-color: #e7c2ab;
+      --lx-accent-dark-color: #a44400;
+    }
+
+    #previous-button,
+    #next-button {
+      background: var(--lx-pane);
+      border: 2px solid var(--lx-accent-color);
+      height: 25rem;
+      padding: 10px 20px;
+      color: var(--lx-accent-color);
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #previous-button:hover,
+    #next-button:hover {
+      background: var(--lx-accent-color);
+      color: var(--lx-pane);
+    }
+
+    #soutenance-interface {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 20px;
+      min-height: 69vh;
+      gap: 2rem;
+    }
+
+    .soutenance-details {
+      font-size: x-large;
+      width: 65rem;
+      height: 31rem;
+      box-sizing: border-box;
+      background-color: var(--lx-pane);
+      border: 2px solid var(--lx-accent-color);
+      padding: 2rem;
+      gap: 2rem;
+      color: var(--lx-text-color);
+      animation: fadeIn 1s ease;
+    }
+
+    .slide {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .slide h2,
+    .slide .center-text {
+      text-align: center;
+    }
+
+    .slide.active {
+      display: block;
+      padding: 0 2rem;
+    }
+
+    .title-slide.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+    }
+
+    .title-slide h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .title-slide p {
+      font-size: 1.5rem;
+      opacity: 0.8;
+    }
+
+    .soutenance-block {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin: 2.5rem 0;
+    }
+
+    .soutenance-block.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .center-text {
+      margin-top: 2rem;
+    }
+
+    .tree {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 8rem;
+      margin: 2.5rem 0;
+    }
+
+    .tree div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    b {
+      color: var(--lx-accent-color);
+    }
+
+    li {
+      list-style: "> ";
+      margin: 1.5rem;
+    }
+
+    li::marker {
+      color: var(--lx-accent-color);
+    }
+
+    img {
+      height: 8rem;
+      border: 2px solid var(--lx-accent-color);
+    }
+
+    .transparent {
+      opacity: 0 !important;
+      pointer-events: none;
+    }
+
+    #slide-number {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--lx-pane);
+      border: 2px solid var(--lx-accent-color);
+      padding: 10px 20px;
+      color: var(--lx-accent-color);
+      font-weight: bold;
+    }
+  </style>
+  <div id="soutenance-interface">
+    <button id="previous-button" class="transparent">&lt;</button>
+
+    <div class="soutenance-details">
+      <div class="slide title-slide active">
+        <h1>Soutenance finale MMI</h1>
+        <p>Lucas MUSY</p>
+      </div>
+
+      <div class="slide">
+        <h2>Sommaire</h2>
+        <div class="soutenance-block">
+          <ul>
+            <li>Présentation de l’entreprise</li>
+            <li>Présentation de ma mission principale</li>
+            <li>Sélection de réalisations</li>
+            <li>Bilan de la formation BUT MMI</li>
+            <li>Avenir professionnel</li>
+          </ul>
+          <img
+            src="images/soutenance-mmi3-juin-2026/enalean_logo.svg"
+            alt="Sommaire" style="border: none;"
+          />
+        </div>
+      </div>
+
+      <div class="slide title-slide">
+        <h1>1. Présentation de l’entreprise</h1>
+        <p>Enalean et Tuleap</p>
+      </div>
+
+      <div class="slide">
+        <h2>L'entreprise Enalean</h2>
+        <div class="soutenance-block">
+          <p>
+            Spécialisé depuis + de 15 ans dans la création d’un outil capable
+            d’accompagner les projets logiciels, nommé Tuleap.
+          </p>
+          <img
+            src="images/soutenance-mmi3-juin-2026/tuleap_logo.svg"
+            alt="Tuleap logo" style="border: none;"
+          />
+        </div>
+        <div class="soutenance-block reverse">
+          <p>
+            Enalean est une PME d’une vingtaine de salariés, repartis en
+            différent pôles.
+          </p>
+          <img
+            src="images/soutenance-mmi3-juin-2026/enalean_logo.svg"
+            alt="Enalean logo" style="border: none;"
+          />
+        </div>
+      </div>
+
+      <div class="slide">
+        <h2>Pôle R&D</h2>
+        <p class="center-text">Manager : Manuel VACELET</p>
+        <div class="tree">
+          <div>
+            <h3>IT</h3>
+            <p>Kevin et Nicolas</p>
+          </div>
+          <div>
+            <h3>Design</h3>
+            <p>Quentin</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <h2>Travailler chez Enalean</h2>
+        <ul>
+          <li>Méthode agile</li>
+          <li>Communication</li>
+          <li>Entraide</li>
+          <li>Bonne entente entre les salariés</li>
+        </ul>
+      </div>
+
+      <div class="slide">
+        <h2>Le produit : Tuleap</h2>
+        <p class="center-text">ALM : Application Lifecycle Manager</p>
+        <div class="soutenance-block">
+          <p>
+            Outil de gestion de projet agile avec un long panel de
+            fonctionnalités
+          </p>
+          <img
+            src="images/soutenance-mmi3-juin-2026/agile_icon.svg"
+            alt="Icône Agilité" style="border: none;"
+          />
+          <p>
+            Ajuster aux besoins du projet et à la méthodologie des utilisateurs.
+          </p>
+        </div>
+        <div class="soutenance-block">
+          <p>
+            Permet le suivi des activités, la gestion du code, la gestion des
+            test, la documentation du projet et autres.
+          </p>
+          <img
+            src="images/soutenance-mmi3-juin-2026/gestion_icon.svg"
+            alt="Icône Gestion" style="border: none;"
+          />
+        </div>
+      </div>
+
+      <div class="slide title-slide">
+        <h1>2. Présentation de ma mission</h1>
+        <p>Ajout du mode sombre de Tuleap</p>
+      </div>
+
+      <div class="slide">
+        <h2>Avant toute chose</h2>
+        <div class="soutenance-block reverse">
+          <p class="center-text">
+            Mise en place du plan d'action de ma mission
+          </p>
+          <img
+            src="images/soutenance-mmi3-juin-2026/plan_action.png"
+            alt="Plan d'action"
+          />
+        </div>
+        <div class="soutenance-block">
+          <p class="center-text">Formation pour la prise en main de Tuleap</p>
+          <img
+            src="images/soutenance-mmi3-juin-2026/tuleap_formation.png"
+            alt="Capture d'écran de la formation de Tuleap"
+          />
+        </div>
+      </div>
+
+      <div class="slide">
+        <h2>Maquettage</h2>
+        <p class="center-text">Reprendre la maquette faite par le designer</p>
+        <div class="soutenance-block">
+          <p>Définir les couleurs pour le dark mode.</p>
+          <img
+            src="images/soutenance-mmi3-juin-2026/maquette_light.png"
+            alt="Maquette faite par le designer"
+          />
+        </div>
+        <div class="soutenance-block reverse">
+          <p>Créer une variante de la maquette en sombre.</p>
+          <img
+            src="images/soutenance-mmi3-juin-2026/maquette_dark.png"
+            alt="Maquette faite par moi"
+          />
+        </div>
+      </div>
+
+      <div class="slide">
+        <h2>Ajout de la User Preference</h2>
+        <div class="soutenance-block reverse">
+          <ul>
+            <li>Ajouter la user preference.</li>
+            <li>Faire en sorte de détecter le mode choisi.</li>
+            <li>Créer le bouton toggle dans la page Apparence.</li>
+            <li>Appliquer le `data-attribute` sur le body.</li>
+            <li>Appliquer le style choisi (light-dark-system).</li>
+          </ul>
+          <img
+            src="images/soutenance-mmi3-juin-2026/user_pref.png"
+            alt="User Preference"
+          />
+        </div>
+      </div>
+
+      <div class="slide">
+        <h2>Problématiques rencontrées</h2>
+        <div class="soutenance-block">
+          <ul>
+            <li>
+              Créer une variante du style pour avoir un mode sombre adéquate.
+            </li>
+            <li>
+              Faire en sorte que l’utilisateur puisse choisir entre light dark
+              et system.
+            </li>
+            <li>
+              Le fait que le style s’applique en fonction du mode choisi
+              (surtout system).
+            </li>
+          </ul>
+          <img
+            src="images/soutenance-mmi3-juin-2026/toggle_button.png"
+            alt="Menu light dark system"
+          />
+        </div>
+      </div>
+
+      <div class="slide">
+        <h2>Démarches réflectives</h2>
+        <div class="soutenance-block reverse">
+          <ul>
+            <li>Créer des variantes de fichier xxx-dark.scss.</li>
+            <li>Redéfinir dans un @media color-scheme.</li>
+          </ul>
+          <img
+            src="images/soutenance-mmi3-juin-2026/bad_css.png"
+            alt="Capture d'écran de css"
+          />
+        </div>
+        <p class="center-text">
+          Créer un fichier color-scheme.scss et utiliser la fonction
+          light-dark().
+        </p>
+      </div>
+
+      <div class="slide">
+        <h2>Organisation</h2>
+        <div class="soutenance-block">
+          <ul>
+            <li>Utilisation du Kanban avec Tuleap.</li>
+            <li>Prioriser mes tâches.</li>
+          </ul>
+          <img
+            src="images/soutenance-mmi3-juin-2026/kanban.png"
+            alt="Kanban Tuleap"
+          />
+        </div>
+        <div class="soutenance-block reverse">
+          <ul>
+            <li>Utilisation de Mattermost et WorkAdventure.</li>
+            <li>Review de code avec Gerrit.</li>
+          </ul>
+          <img
+            src="images/soutenance-mmi3-juin-2026/communication.png"
+            alt="Moyen de communication"
+          />
+        </div>
+      </div>
+
+      <div class="slide">
+        <h2>Ce que cela m’a apporté</h2>
+        <div class="soutenance-block reverse">
+          <ul>
+            <li>Organisation concrète avec mon équipe.</li>
+            <li>Autonomie.</li>
+          </ul>
+          <img
+            src="images/soutenance-mmi3-juin-2026/groupe.png"
+            alt="Gestion de projet en groupe"
+          />
+        </div>
+        <div class="soutenance-block">
+          <ul>
+            <li>Prise d’initiative.</li>
+            <li>Défense de mes idées.</li>
+          </ul>
+          <img
+            src="images/soutenance-mmi3-juin-2026/reunion.png"
+            alt="Réunion"
+          />
+        </div>
+      </div>
+
+      <div class="slide title-slide">
+        <h1>3. Sélection de réalisations</h1>
+        <p>et leurs liens entre la formation et l'alternance</p>
+      </div>
+
+      <div class="slide">
+        <h2>Compétences utilisées</h2>
+        <div class="soutenance-block">
+          <ul>
+            <li>Organisation de tâches avec Tuleap (gestion de projet).</li>
+            <li>PHP (et Javascript).</li>
+            <li>Découverte de mustache et du TypeScript.</li>
+            <li>Gestion d’équipe avec Gerrit, WorkAdventure et Tuleap.</li>
+          </ul>
+          <img
+            src="images/soutenance-mmi3-juin-2026/tuleap_screen.png"
+            alt="Capture d'écran de Tuleap"
+          />
+        </div>
+      </div>
+
+      <div class="slide">
+        <h2>Equivalences en MMI</h2>
+        <div class="soutenance-block">
+          <ul>
+            <li>Organisation de tâches avec Notion (gestion de projet).</li>
+            <li>PHP et Javascript.</li>
+            <li>Découverte de nouvelles technos.</li>
+            <li>Gestion d’équipe avec Discord, Trello et Notion.</li>
+          </ul>
+          <img
+            src="images/soutenance-mmi3-juin-2026/notion_screen.png"
+            alt="Capture d'écran de Notion"
+          />
+        </div>
+      </div>
+
+      <div class="slide title-slide">
+        <h1>4. Bilan de la formation MMI</h1>
+        <p>et de mon évolution de 2022 à 2026</p>
+      </div>
+
+      <div class="slide">
+        <h2>Forces</h2>
+        <div class="soutenance-block reverse">
+          <ul>
+            <li>Découverte de nouvelles technos.</li>
+            <li>Organisation.</li>
+            <li>Travail en équipe.</li>
+            <li>Autonomie.</li>
+          </ul>
+          <img
+            src="images/soutenance-mmi3-juin-2026/technos.png"
+            alt="Nouvelles technos"
+          />
+        </div>
+      </div>
+
+      <div class="slide">
+        <h2>Faiblesses</h2>
+        <div class="soutenance-block">
+          <ul>
+            <li>Difficultés à apprendre différents langages simultanément.</li>
+            <li>Temps pour me remettre "dans le bain".</li>
+            <li>Redoublement.</li>
+          </ul>
+          <p>&gt;</p>
+          <ul>
+            <li>Organisation.</li>
+            <li>Ne pas me précipiter et en faire de mon côté.</li>
+            <li>Projets perso et améliorer ma rigueur et mon autonomie.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="slide title-slide">
+        <h1>5. Avenir professionnel</h1>
+        <p>Ce que je compte faire après MMI</p>
+      </div>
+
+      <div class="slide">
+        <h2>Chronologie de mes objectifs</h2>
+        <div class="soutenance-block">
+          <p>Démenager de Chambéry</p>
+          <p><b>⬎</b></p>
+        </div>
+        <div class="soutenance-block reverse">
+          <p>Continuer à travailler dans le dev web</p>
+          <p><b>⬐</b></p>
+        </div>
+        <div class="soutenance-block">
+          <p>M’organiser pour avancer davantage sur mes projets perso</p>
+          <p><b>⬎</b></p>
+        </div>
+        <p class="center-text">
+          Une fois mon portfolio approfondi, me tourner vers le dev de jeu
+          vidéo.
+        </p>
+      </div>
+
+      <div class="slide">
+        <h2>Conclusion</h2>
+        <ul>
+          <li>MMI m’a permis d’accroitre mon panel de compétences.</li>
+          <li>
+            Le travail en équipe ainsi que mon autonomie m’ont permis d’évoluer.
+          </li>
+          <li>
+            L’alternance a permis de mettre en place mes nouvelles compétences
+            et de m’insérer dans le monde professionnel.
+          </li>
+        </ul>
+      </div>
+
+      <div class="slide title-slide">
+        <h1>Merci de m'avoir écouté</h1>
+      </div>
+    </div>
+
+    <button id="next-button">&gt;</button>
+    <div id="slide-number"></div>
+  </div>
+
+  <script type="module" is:inline>
+    let step = 0;
+
+    const slides = document.querySelectorAll(".slide");
+    const previousBtn = document.getElementById("previous-button");
+    const nextBtn = document.getElementById("next-button");
+    const pageNumber = document.getElementById("slide-number");
+
+    function updateSlides() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle("active", index === step);
+      });
+
+      previousBtn.classList.toggle("transparent", step === 0);
+      nextBtn.classList.toggle("transparent", step === slides.length - 1);
+
+      pageNumber.textContent = `${step + 1} / ${slides.length}`;
+    }
+
+    previousBtn.addEventListener("click", () => {
+      if (step > 0) {
+        step--;
+        updateSlides();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (step < slides.length - 1) {
+        step++;
+        updateSlides();
+      }
+    });
+
+    updateSlides();
+  </script>
+</BaseLayout>
