@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Saira:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 :root {
@@ -25,7 +26,8 @@
   --lx-ia-text-color: var(--lx-accent-dark-color);
   --lx-secondary-accent-color: var(--lx-accent-light-color);
 
-  --lx-font: "Orbitron", sans-serif;
+  --lx-title-font: "Orbitron", sans-serif;
+  --lx-font: "Chakra Petch", sans-serif;
   --lx-ia-font: "Press Start 2P", monospace;
 }
 
@@ -54,6 +56,18 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+a,
+a p,
+button,
+button p,
+footer {
+  font-family: var(--lx-title-font);
 }
 
 a {
@@ -212,7 +226,8 @@ main {
 }
 
 /* Fragments (liens) */
-.fragment, #contact-fragment {
+.fragment,
+#contact-fragment {
   background: var(--lx-pane);
   text-decoration: none;
   border: 2px solid var(--lx-accent-color);
@@ -225,24 +240,28 @@ main {
   transform: skew(30deg);
 }
 
-.fragment:hover, #contact-fragment:hover {
+.fragment:hover,
+#contact-fragment:hover {
   background: var(--lx-secondary-accent-color);
   color: var(--lx-pane);
   transform: skew(0);
 }
 
-.fragment p, #contact-fragment p {
+.fragment p,
+#contact-fragment p {
   transition: none;
   transform: skew(-30deg);
   text-align: center;
 }
 
-.fragment:hover p, #contact-fragment:hover p {
+.fragment:hover p,
+#contact-fragment:hover p {
   transform: skew(0);
 }
 
 /* === Pop-up de validation Luxiverse === */
-#popup, #contact-popup {
+#popup,
+#contact-popup {
   position: fixed;
   inset: 0;
   background: var(--lx-text-faint);
@@ -254,12 +273,14 @@ main {
   transition: opacity 0.3s ease;
 }
 
-#popup.hidden, #contact-popup.hidden {
+#popup.hidden,
+#contact-popup.hidden {
   opacity: 0;
   pointer-events: none;
 }
 
-.popup-content, #contact-popup .popup-content {
+.popup-content,
+#contact-popup .popup-content {
   background: var(--lx-pane);
   border: 3px solid var(--lx-accent-color);
   padding: 2rem 3rem;
@@ -269,7 +290,8 @@ main {
   transform: skew(30deg);
 }
 
-.popup-content p, #contact-popup .popup-content p {
+.popup-content p,
+#contact-popup .popup-content p {
   font-family: var(--lx-ia-font);
   font-size: 0.65rem;
   line-height: 1.2rem;
@@ -725,7 +747,8 @@ p.popup-links {
   margin-top: 4rem;
 }
 
-#avatar-canvas, #error-canvas {
+#avatar-canvas,
+#error-canvas {
   width: 400px;
   height: 400px;
   border: 2px solid var(--lx-accent-color);
@@ -839,14 +862,14 @@ footer a:hover {
 
 @media (prefers-color-scheme: dark) {
   :root {
-  --lx-bg: var(--lx-black-color);
-  --lx-pane: var(--lx-dark-color);
-  --lx-text-color: var(--lx-grey-light-color);
-  --lx-text-faint: var(--lx-grey-light-color-transparent);
-  --lx-ia-text-color: var(--lx-accent-light-color);
-  --lx-secondary-accent-color: var(--lx-accent-dark-color);
+    --lx-bg: var(--lx-black-color);
+    --lx-pane: var(--lx-dark-color);
+    --lx-text-color: var(--lx-grey-light-color);
+    --lx-text-faint: var(--lx-grey-light-color-transparent);
+    --lx-ia-text-color: var(--lx-accent-light-color);
+    --lx-secondary-accent-color: var(--lx-accent-dark-color);
 
-  --lx-shadow-color: var(--lx-grey-dark-color);
+    --lx-shadow-color: var(--lx-grey-dark-color);
   }
 
   header .logo-container img {

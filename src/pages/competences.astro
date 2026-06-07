@@ -1,23 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import skillRank from "../scripts/skill_rank?url";
-import skillAvatar from "../scripts/skill_avatar?url";
+import skillRank from "../scripts/skill_rank.js?url";
+import skillAvatar from "../scripts/skill_avatar.js?url";
 
 const skills = [
-    { name: "HTML/CSS", xp: 2300, category: "dev" },
-    { name: "JavaScript", xp: 1500, category: "dev" },
-    { name: "Unity", xp: 1017, category: "dev" },
-    { name: "C#", xp: 906, category: "dev" },
-    { name: "Astro", xp: 75, category: "dev" },
+    { name: "HTML/CSS", xp: 2000, category: "dev" },
+    { name: "JavaScript", xp: 1350, category: "dev" },
+    { name: "Unity", xp: 817, category: "dev" },
+    { name: "C#", xp: 806, category: "dev" },
+    { name: "Astro", xp: 135, category: "dev" },
 
     { name: "Blender", xp: 30, category: "creation" },
-    { name: "Pixel Art", xp: 160, category: "creation" },
+    { name: "Pixel Art", xp: 560, category: "creation" },
     { name: "Game Design", xp: 110, category: "creation" },
     { name: "UI/UX", xp: 600, category: "creation" },
 
-    { name: "Esprit d'équipe", xp: 165, category: "soft" },
-    { name: "Créativité", xp: 280, category: "soft" },
-    { name: "Autonomie", xp: 250, category: "soft" },
+    { name: "Esprit d'équipe", xp: 865, category: "soft" },
+    { name: "Créativité", xp: 880, category: "soft" },
+    { name: "Autonomie", xp: 850, category: "soft" },
 ];
 ---
 
@@ -81,16 +81,16 @@ const skills = [
         <p>Chaque rang progresse de I à V.</p>
         <p>Après V, passage au rang supérieur.</p>
         <ul>
-            <li> <img id="rank-small-icon" src="../images//ranks/bois.png" alt="Bois" />Bois</li>
-            <li> <img id="rank-small-icon" src="../images//ranks/pierre.png" alt="Pierre" />Pierre</li>
-            <li> <img id="rank-small-icon" src="../images//ranks/fer.png" alt="Fer" />Fer</li>
-            <li> <img id="rank-small-icon" src="../images//ranks/bronze.png" alt="Bronze" />Bronze</li>
-            <li> <img id="rank-small-icon" src="../images//ranks/argent.png" alt="Argent" />Argent</li>
-            <li> <img id="rank-small-icon" src="../images//ranks/or.png" alt="Or" />Or</li>
-            <li> <img id="rank-small-icon" src="../images//ranks/platine.png" alt="Platine" />Platine</li>
-            <li> <img id="rank-small-icon" src="../images//ranks/diamant.png" alt="Diamant" />Diamant</li>
-            <li> <img id="rank-small-icon" src="../images//ranks/ruthenium.png" alt="Ruthénium" />Ruthénium</li>
-            <li> <img id="rank-small-icon" src="../images//ranks/luxerite.png" alt="Luxerite" />Luxerite</li>
+            <li> <img id="rank-small-icon" src="../images/ranks/bois.png" alt="Bois" />Bois</li>
+            <li> <img id="rank-small-icon" src="../images/ranks/pierre.png" alt="Pierre" />Pierre</li>
+            <li> <img id="rank-small-icon" src="../images/ranks/fer.png" alt="Fer" />Fer</li>
+            <li> <img id="rank-small-icon" src="../images/ranks/bronze.png" alt="Bronze" />Bronze</li>
+            <li> <img id="rank-small-icon" src="../images/ranks/argent.png" alt="Argent" />Argent</li>
+            <li> <img id="rank-small-icon" src="../images/ranks/or.png" alt="Or" />Or</li>
+            <li> <img id="rank-small-icon" src="../images/ranks/platine.png" alt="Platine" />Platine</li>
+            <li> <img id="rank-small-icon" src="../images/ranks/diamant.png" alt="Diamant" />Diamant</li>
+            <li> <img id="rank-small-icon" src="../images/ranks/ruthenium.png" alt="Ruthénium" />Ruthénium</li>
+            <li> <img id="rank-small-icon" src="../images/ranks/luxerite.png" alt="Luxerite" />Luxerite</li>
         </ul>
       </div>
     </div>

@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Soutenance MMI
+src/pages/soutenance-mmi3-juin-2026.astro
+public/images/soutenance-mmi3-juin-2026/
