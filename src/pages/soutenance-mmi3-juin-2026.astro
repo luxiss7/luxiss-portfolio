@@ -2,7 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Soutenance MMI 2026" currentPage="soutenance-mmi3-juin-2026" robots="noindex">
+<BaseLayout
+  title="Soutenance MMI 2026"
+  currentPage="soutenance-mmi3-juin-2026"
+  robots="noindex"
+>
   <style is:global>
     body[data-page="soutenance-mmi3-juin-2026"] header {
       margin-top: 2rem;
@@ -117,15 +121,30 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      gap: 8rem;
-      margin: 2.5rem 0;
+      gap: 2rem;
     }
 
-    .tree div {
+    .tree-box {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      width: 15rem;
+      height: 10rem;
+    }
+
+    .tree-box svg {
+      margin: 1.5rem 0;
+    }
+
+    .org-chart {
+      width: 100%;
+      height: 60px;
+      margin: 1.5rem 0;
+    }
+
+    .org-chart line {
+      stroke: var(--lx-accent-color);
+      stroke-width: 2;
     }
 
     b {
@@ -183,7 +202,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </ul>
           <img
             src="/images/soutenance-mmi3-juin-2026/enalean_logo.svg"
-            alt="Sommaire" style="border: none;"
+            alt="Sommaire"
+            style="border: none;"
           />
         </div>
       </div>
@@ -198,21 +218,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div class="soutenance-block">
           <p>
             Spécialisé depuis + de 15 ans dans la création d’un outil capable
-            d’accompagner les projets logiciels, nommé Tuleap.
+            d’accompagner les projets logiciels, nommé <b>Tuleap</b>.
           </p>
           <img
             src="/images/soutenance-mmi3-juin-2026/tuleap_logo.svg"
-            alt="Tuleap logo" style="border: none;"
+            alt="Tuleap logo"
+            style="border: none;"
           />
         </div>
         <div class="soutenance-block reverse">
           <p>
-            Enalean est une PME d’une vingtaine de salariés, repartis en
+            <b>Enalean</b> est une PME d’une vingtaine de salariés, repartis en
             différent pôles.
           </p>
           <img
             src="/images/soutenance-mmi3-juin-2026/enalean_logo.svg"
-            alt="Enalean logo" style="border: none;"
+            alt="Enalean logo"
+            style="border: none;"
           />
         </div>
       </div>
@@ -220,13 +242,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="slide">
         <h2>Pôle R&D</h2>
         <p class="center-text">Manager : Manuel VACELET</p>
+        <svg class="org-chart" viewBox="0 0 100 40">
+          <line x1="50" y1="0" x2="50" y2="15"></line>
+          <line x1="-40" y1="15" x2="140" y2="15"></line>
+          <line x1="-40" y1="15" x2="-40" y2="35"></line>
+          <line x1="140" y1="15" x2="140" y2="35"></line>
+        </svg>
         <div class="tree">
-          <div>
+          <div class="tree-box">
             <h3>IT</h3>
+            <svg width="10" height="40">
+              <line x1="5" y1="0" x2="5" y2="40" stroke="var(--lx-accent-color)" stroke-width="3"></line>
+            </svg>
             <p>Kevin et Nicolas</p>
           </div>
-          <div>
+          <div class="tree-box">
             <h3>Design</h3>
+            <svg width="10" height="40">
+              <line x1="5" y1="0" x2="5" y2="40" stroke="var(--lx-accent-color)" stroke-width="3"></line>
+            </svg>
             <p>Quentin</p>
           </div>
         </div>
@@ -234,12 +268,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <div class="slide">
         <h2>Travailler chez Enalean</h2>
-        <ul>
-          <li>Méthode agile</li>
-          <li>Communication</li>
-          <li>Entraide</li>
-          <li>Bonne entente entre les salariés</li>
-        </ul>
+        <div class="soutenance-block">
+          <ul>
+            <li>Méthode agile</li>
+            <li>Communication</li>
+            <li>Entraide</li>
+            <li>Bonne entente entre les salariés</li>
+          </ul>
+        </div>
       </div>
 
       <div class="slide">
@@ -252,7 +288,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </p>
           <img
             src="/images/soutenance-mmi3-juin-2026/agile_icon.svg"
-            alt="Icône Agilité" style="border: none;"
+            alt="Icône Agilité"
+            style="border: none;"
           />
           <p>
             Ajuster aux besoins du projet et à la méthodologie des utilisateurs.
@@ -265,7 +302,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </p>
           <img
             src="/images/soutenance-mmi3-juin-2026/gestion_icon.svg"
-            alt="Icône Gestion" style="border: none;"
+            alt="Icône Gestion"
+            style="border: none;"
           />
         </div>
       </div>
@@ -279,7 +317,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <h2>Avant toute chose</h2>
         <div class="soutenance-block reverse">
           <p class="center-text">
-            Mise en place du plan d'action de ma mission
+            Mise en place du plan d'action de ma <b>mission</b> et compréhension de la problématique.
           </p>
           <img
             src="/images/soutenance-mmi3-juin-2026/plan_action.png"
@@ -287,10 +325,31 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           />
         </div>
         <div class="soutenance-block">
-          <p class="center-text">Formation pour la prise en main de Tuleap</p>
+          <p class="center-text">Formation pour la <b>prise en main</b> de Tuleap</p>
           <img
             src="/images/soutenance-mmi3-juin-2026/tuleap_formation.png"
             alt="Capture d'écran de la formation de Tuleap"
+          />
+        </div>
+      </div>
+
+      <div class="slide">
+        <h2>Problématiques</h2>
+        <div class="soutenance-block reverse">
+          <ul>
+            <li>
+              La lumière des écrans abîme les yeux des utilisateurs.
+            </li>
+            <li>
+              Le changement d'onglet entre applications avec différents modes dérange.
+            </li>
+            <li>
+              Le mode sombre est souvent utiliser par nos clients sur leurs autres outils, donc alignement stratégique requis.
+            </li>
+          </ul>
+          <img
+            src="/images/soutenance-mmi3-juin-2026/onglets.png"
+            alt="Modes différents entre les onglets"
           />
         </div>
       </div>
@@ -315,13 +374,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
 
       <div class="slide">
-        <h2>Ajout de la User Preference</h2>
+        <h2>Ajout de la feature dans le code</h2>
         <div class="soutenance-block reverse">
           <ul>
-            <li>Ajouter la user preference.</li>
+            <li>Ajouter la <b>user preference</b>.</li>
             <li>Faire en sorte de détecter le mode choisi.</li>
             <li>Créer le bouton toggle dans la page Apparence.</li>
-            <li>Appliquer le `data-attribute` sur le body.</li>
+            <li>Appliquer le <b>`data-attribute`</b> sur le body.</li>
             <li>Appliquer le style choisi (light-dark-system).</li>
           </ul>
           <img
@@ -332,14 +391,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
 
       <div class="slide">
-        <h2>Problématiques rencontrées</h2>
+        <h2>Démarches réflectives : Problèmes</h2>
         <div class="soutenance-block">
           <ul>
             <li>
               Créer une variante du style pour avoir un mode sombre adéquate.
             </li>
             <li>
-              Faire en sorte que l’utilisateur puisse choisir entre light dark
+              Faire en sorte que l’utilisateur puisse choisir entre light, dark
               et system.
             </li>
             <li>
@@ -355,10 +414,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
 
       <div class="slide">
-        <h2>Démarches réflectives</h2>
+        <h2>Démarches réflectives : Solutions</h2>
         <div class="soutenance-block reverse">
           <ul>
-            <li>Créer des variantes de fichier xxx-dark.scss.</li>
+            <li>Créer des variantes de fichier <b>xxx-dark.scss</b>.</li>
             <li>Redéfinir dans un @media color-scheme.</li>
           </ul>
           <img
@@ -366,9 +425,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             alt="Capture d'écran de css"
           />
         </div>
+        <p class="center-text"><b>Solution apportée :</b></p>
         <p class="center-text">
           Créer un fichier color-scheme.scss et utiliser la fonction
-          light-dark().
+          <b>light-dark()</b>.
         </p>
       </div>
 
@@ -376,7 +436,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <h2>Organisation</h2>
         <div class="soutenance-block">
           <ul>
-            <li>Utilisation du Kanban avec Tuleap.</li>
+            <li>Utilisation du <b>Kanban</b> avec Tuleap.</li>
             <li>Prioriser mes tâches.</li>
           </ul>
           <img
@@ -426,12 +486,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
 
       <div class="slide">
-        <h2>Compétences utilisées</h2>
+        <h2>Compétences utilisées en alternance</h2>
         <div class="soutenance-block">
           <ul>
             <li>Organisation de tâches avec Tuleap (gestion de projet).</li>
             <li>PHP (et Javascript).</li>
-            <li>Découverte de mustache et du TypeScript.</li>
+            <li>Découverte de <b>mustache</b> et du TypeScript.</li>
             <li>Gestion d’équipe avec Gerrit, WorkAdventure et Tuleap.</li>
           </ul>
           <img
@@ -442,7 +502,22 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
 
       <div class="slide">
-        <h2>Equivalences en MMI</h2>
+        <h2>Ajout du dark mode pour le Storybook</h2>
+        <div class="soutenance-block reverse">
+          <ul>
+            <li>Découverte d'une nouvelle techno : <b>Typescript</b>.</li>
+            <li>Veille et documentation.</li>
+            <li>Tâche réalisée en autonomie.</li>
+          </ul>
+          <img
+            src="/images/soutenance-mmi3-juin-2026/storybook.png"
+            alt="Storybook"
+          />
+        </div>
+      </div>
+
+      <div class="slide">
+        <h2>Compétences utilisées en formation</h2>
         <div class="soutenance-block">
           <ul>
             <li>Organisation de tâches avec Notion (gestion de projet).</li>
@@ -453,6 +528,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <img
             src="/images/soutenance-mmi3-juin-2026/notion_screen.png"
             alt="Capture d'écran de Notion"
+          />
+        </div>
+      </div>
+
+      <div class="slide">
+        <h2>Réalisation d'un jeu vidéo connecté</h2>
+        <div class="soutenance-block reverse">
+          <ul>
+            <li>Gestion de projet en équipe grâce à <b>Notion</b> et autres canaux</li>
+            <li>Organisation et répartition des tâches.</li>
+            <li>Développement du jeu en <b>C# sur Unity</b> et initiation à <b>Blender</b> pour les modèles 3D.</li>
+          </ul>
+          <img
+            src="/images/soutenance-mmi3-juin-2026/qui-vole-un-oeuf.png"
+            alt="Capture d'écran du jeu `Qui vole un oeuf, vole un dragon`"
           />
         </div>
       </div>
@@ -522,16 +612,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <div class="slide">
         <h2>Conclusion</h2>
-        <ul>
-          <li>MMI m’a permis d’accroitre mon panel de compétences.</li>
-          <li>
-            Le travail en équipe ainsi que mon autonomie m’ont permis d’évoluer.
-          </li>
-          <li>
-            L’alternance a permis de mettre en place mes nouvelles compétences
-            et de m’insérer dans le monde professionnel.
-          </li>
-        </ul>
+        <div class="soutenance-block">
+          <ul>
+            <li><b>MMI</b> m’a permis d’accroitre mon panel de compétences.</li>
+            <li>
+              Le travail en équipe ainsi que mon autonomie m’ont permis
+              d’évoluer.
+            </li>
+            <li>
+              L’alternance a permis de mettre en place mes nouvelles compétences
+              et de m’insérer dans le <b>monde professionnel</b>.
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div class="slide title-slide">

@@ -134,6 +134,33 @@ const pageColors = {
       iaText: 'var(--lx-accent-light-color)',
       secondaryAccent: 'var(--lx-accent-dark-color)',
     }
+  },
+  'polyhedrons': {
+    root: {
+      '--lx-white-color': '#fefefe',
+      '--lx-light-color': '#e7e7e7',
+      '--lx-black-color': '#121212',
+      '--lx-dark-color': '#1e1e1e',
+      '--lx-accent-color': '#0000ff',
+      '--lx-accent-light-color': '#ffff00',
+      '--lx-accent-dark-color': '#691515',
+    },
+    light: {
+      bg: 'var(--lx-light-color)',
+      pane: 'var(--lx-white-color)',
+      text: 'var(--lx-grey-dark-color)',
+      textFaint: 'var(--lx-grey-dark-color-transparent)',
+      iaText: 'var(--lx-accent-dark-color)',
+      secondaryAccent: 'var(--lx-accent-light-color)',
+    },
+    dark: {
+      bg: 'var(--lx-black-color)',
+      pane: 'var(--lx-dark-color)',
+      text: 'var(--lx-grey-light-color)',
+      textFaint: 'var(--lx-grey-light-color-transparent)',
+      iaText: 'var(--lx-accent-light-color)',
+      secondaryAccent: 'var(--lx-accent-dark-color)',
+    }
   }
 };
 
