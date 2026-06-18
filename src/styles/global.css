@@ -74,6 +74,10 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style: square inside;
+}
+
 #main-interface {
   display: flex;
   flex-direction: column;
