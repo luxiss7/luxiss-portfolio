@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greed Tower</title>
+    <link rel="icon" type="image/png" href="sprites/icon/medium.png" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside id="unit-guide" aria-label="Fiche des unités">
+        <h2>Fiche des unités</h2>
+
+        <div class="unit-card">
+            <div class="unit-header">
+                <img src="sprites/icon/small.png" alt="Recrue" width="32" height="32">
+                <div>
+                    <h3 class="green">Recrue</h3>
+                    <span>Coût : 1 <img src="sprites/icon/playercoin.png" height="16px" width="16px"></span>
+                </div>
+            </div>
+            <ul>
+                <li>PV : 3</li>
+                <li>Attaque : 1</li>
+                <li>Vitesse de frappe : 1</li>
+            </ul>
+        </div>
+
+        <div class="unit-card">
+            <div class="unit-header">
+                <img src="sprites/icon/medium.png" alt="Mercenaire" width="32" height="32">
+                <div>
+                    <h3 class="green">Mercenaire</h3>
+                    <span>Coût : 2 <img src="sprites/icon/playercoin.png" height="16px" width="16px"></span>
+                </div>
+            </div>
+            <ul>
+                <li>PV : 6</li>
+                <li>Attaque : 1.5</li>
+                <li>Vitesse de frappe : 0.75</li>
+            </ul>
+        </div>
+
+        <div class="unit-card">
+            <div class="unit-header">
+                <img src="sprites/icon/big.png" alt="Colosse" width="32" height="32">
+                <div>
+                    <h3 class="green">Colosse</h3>
+                    <span>Coût : 3 <img src="sprites/icon/playercoin.png" height="16px" width="16px"></span>
+                </div>
+            </div>
+            <ul>
+                <li>PV : 9</li>
+                <li>Attaque : 3</li>
+                <li>Vitesse de frappe : 0.5</li>
+            </ul>
+        </div>
+    </aside>
+
+    <div id="game">
+        <h1><div class="green">Greed</div><div class="pink">Tower</div></h1>
+        <div id="game-info">
+            <div class="green" id="joueur-infos">
+                <div id="pieces"></div>
+                <div id="tour-pv"></div>
+            </div>
+            <div class="pink" id="bot-infos">
+                <div id="bot-pieces"></div>
+                <div id="bot-pv"></div>
+            </div>
+        </div>
+        <canvas id="gameCanvas" width="600" height="400"></canvas>
+        <div id="troupes">
+            <button class="btn-troupe btn-troupe1" onclick="invoquerTroupe(0)">
+                <p>Recrue (1 <img class="cost-icon" src="sprites/icon/playercoin.png" data-hover="sprites/icon/blackcoin.png" height="16px" width="16px">)</p>
+            </button>
+            <button class="btn-troupe btn-troupe2" onclick="invoquerTroupe(1)">
+                <p>Mercenai<i>re (2 <img class="cost-icon" src="sprites/icon/botcoin.png" data-hover="sprites/icon/blackcoin.png" height="16px" width="16px">)</i></p>
+            </button>
+            <button class="btn-troupe btn-troupe3" onclick="invoquerTroupe(2)">
+                <p>Colosse <i>(3 <img class="cost-icon" src="sprites/icon/botcoin.png" data-hover="sprites/icon/blackcoin.png" height="16px" width="16px">)</i></p>
+            </button>
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <div id="unit-guide-mobile" aria-label="Fiche des unités mobile">
+        <h2>Fiche des unités</h2>
+
+        <div class="unit-card">
+            <img src="sprites/icon/small.png" alt="Recrue" width="28" height="28">
+            <div class="unit-header">
+                <div>
+                    <h3 class="green">Recrue</h3>
+                    <span>Coût : 1 <img src="sprites/icon/playercoin.png" height="16px" width="16px"></span>
+                </div>
+                <div>
+                <span>PV : 3</span>
+                <span>ATK : 1</span>
+                <span>VIT : 1</span>
+            </div>
+            </div>
+        </div>
+
+        <div class="unit-card">
+            <img src="sprites/icon/medium.png" alt="Mercenaire" width="28" height="28">
+            <div class="unit-header">
+                <div>
+                    <h3 class="green">Mercenaire</h3>
+                    <span>Coût : 2 <img src="sprites/icon/playercoin.png" height="16px" width="16px"></span>
+                </div>
+                <div>
+                <span>PV : 6</span>
+                <span>ATK : 1.5</span>
+                <span>VIT : 0.75</span>
+            </div>
+            </div>
+        </div>
+
+        <div class="unit-card">
+            <img src="sprites/icon/big.png" alt="Colosse" width="28" height="28">
+            <div class="unit-header">
+                <div>
+                    <h3 class="green">Colosse</h3>
+                    <span>Coût : 3 <img src="sprites/icon/playercoin.png" height="16px" width="16px"></span>
+                </div>
+                <div>
+                <span>PV : 9</span>
+                <span>ATK : 3</span>
+                <span>VIT : 0.5</span>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

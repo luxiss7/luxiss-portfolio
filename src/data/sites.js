@@ -87,5 +87,34 @@ export const sites = [
     tech: ["php", "mustache", "TypeScript", "SCSS"],
     type: "Design",
     duration: "12 mois en alternance"
+  },
+  {
+    slug: "greed-tower",
+    name: "Greed Tower",
+    nickname: "Tower Rush",
+    status: "perso", // "cours" | "perso" | "avenir"
+    shortDescription: "Un site ludique permettant d'affronter un bot en envoyant des troupes attaquer la tour adverse.",
+    description: [
+      {
+        type: "text-image",
+        text: "Ce site a été conçu afin que de servir d'entraienement de développement web de jeu vidéo web.",
+        image: "/images/web/greed-tower/1.png"
+      },
+      {
+        type: "image-text",
+        text: "Le design du site s'inspire des anciens jeux vidéos 8-bit sur des consoles rétro tel que les premières GameBoy.",
+        image: "/images/web/greed-tower/2.png"
+      },
+      {
+        type: "text-image",
+        text: "Le site est construit en HTML, CSS et Javascript afin de prouver la maîtrise de ces technologies.",
+        image: "/images/web/greed-tower/3.png"
+      }
+    ],
+    tech: ["HTML", "JavaScript"],
+    type: "Jeu vidéo",
+    duration: "1 mois",
+    redirection: "/web/greed-tower/index.html",
   }
+
 ];

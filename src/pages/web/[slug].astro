@@ -46,6 +46,15 @@ if (!web) {
     </section>
   </div>
 
+  {/* Boutons latéraux */}
+  <div class="side-buttons">
+    {web.redirection && (
+      <a href={web.redirection} class="setting-btn">
+        <p>Accéder au site</p>
+      </a>
+    )}
+  </div>
+
   <a href="/web" id="enter-button" class="back-link">
     <p>Retour aux projets</p>
   </a>
