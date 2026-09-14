@@ -114,7 +114,7 @@ export const sites = [
     tech: ["HTML", "JavaScript"],
     type: "Jeu vidéo",
     duration: "1 mois",
-    redirection: "/web/greed-tower/index.html",
+    redirection: "/sites/greed-tower/index.html",
   }
 
 ];
