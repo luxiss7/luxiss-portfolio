@@ -31,7 +31,7 @@ export const games = [
         version: "0.1.0",
         techno: "Pokemon Studio",
         note: "Prototype de base",
-        link: "../assets/games/downloads/pokemon-death-life-0.1.0.zip"
+        link: "../games/downloads/pokemon-death-life-0.1.0.zip"
       },
       {
         version: "0.2.0",
@@ -73,7 +73,7 @@ export const games = [
         version: "0.1.0",
         techno: "Processing",
         note: "Prototype de base",
-        link: "../assets/games/downloads/laced-together-0.1.0.zip"
+        link: "../games/downloads/laced-together-0.1.0.zip"
       },
       {
         version: "0.2.0",
@@ -124,7 +124,7 @@ export const games = [
         version: "0.1.0",
         techno: "React",
         note: "Version officielle avec deux mini-jeux",
-        link: "../assets/games/downloads/barcade-0.1.0.zip"
+        link: "../games/downloads/barcade-0.1.0.zip"
       }
     ]
   },
@@ -159,7 +159,7 @@ export const games = [
         version: "0.1.0",
         techno: "Unity",
         note: "Version officielle avec interactions RFID",
-        link: "../assets/games/downloads/qui-vole-un-oeuf-0.1.0.zip"
+        link: "../games/downloads/qui-vole-un-oeuf-0.1.0.zip"
       },
       {
         version: "0.2.0",
@@ -230,7 +230,7 @@ export const games = [
         version: "1.1.0",
         techno: "Unity VR",
         note: "Version officielle rendue dans le cadre de ma formation",
-        link: "../assets/games/downloads/polyhedrons-vr-1.1.0.zip"
+        link: "../games/downloads/polyhedrons-vr-1.1.0.zip"
       }
     ]
   }

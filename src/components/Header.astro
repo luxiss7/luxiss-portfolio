@@ -5,7 +5,19 @@
     </a>
     <h1>Luxiss</h1>
   </div>
-  <div class="nav-links">
+  <button
+    id="menu-toggle"
+    class="menu-toggle"
+    type="button"
+    aria-label="Ouvrir le menu"
+    aria-expanded="false"
+    aria-controls="main-navigation"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div id="main-navigation" class="nav-links">
     <a href="/">Accueil</a>
     <a href="/games/">Jeux Vidéo</a>
     <a href="/web/">Sites Web</a>
@@ -32,6 +44,22 @@
   const contactTrigger = document.getElementById("contact-trigger");
   const contactPopup = document.getElementById("contact-popup");
   const contactClose = document.getElementById("contact-close");
+  const menuToggle = document.getElementById("menu-toggle");
+  const mainNavigation = document.getElementById("main-navigation");
+
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = mainNavigation?.classList.toggle("is-open") ?? false;
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
+  });
+
+  mainNavigation?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mainNavigation.classList.remove("is-open");
+      menuToggle?.setAttribute("aria-expanded", "false");
+      menuToggle?.setAttribute("aria-label", "Ouvrir le menu");
+    });
+  });
 
   contactTrigger?.addEventListener("click", (e) => {
     e.preventDefault();
