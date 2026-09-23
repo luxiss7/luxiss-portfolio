@@ -982,6 +982,11 @@ footer a:hover {
     padding: 5rem;
   }
 
+  p.popup-links {
+    flex-direction: column;
+    gap: 1rem;
+}
+
   #filters {
     width: 300px;
   }
@@ -1037,7 +1042,7 @@ footer a:hover {
       margin-bottom: 1rem;
   }
 
-  #skills-list {
+  #skills-list, #skills-scroll {
     width: 350px;
   }
 
