@@ -230,7 +230,7 @@ export const games = [
         version: "1.1.0",
         techno: "Unity VR",
         note: "Version officielle rendue dans le cadre de ma formation",
-        link: "../games/downloads/polyhedrons-vr-1.1.0.zip"
+        link: "https://drive.google.com/file/d/1xz7j_WfMUAcQl3IIWJNJ2wxIwJCOnbVO/view"
       }
     ]
   }
