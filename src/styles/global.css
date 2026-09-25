@@ -39,6 +39,10 @@
   scrollbar-color: var(--lx-button-color) var(--lx-pane);
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 *::selection {
   background: var(--lx-secondary-accent-color);
   color: var(--lx-text-color);
@@ -398,6 +402,7 @@ p.popup-links {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
   padding: 3rem;
   max-width: 1000px;
   margin: 0 auto;

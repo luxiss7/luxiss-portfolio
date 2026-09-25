@@ -13,16 +13,16 @@ export const sites = [
       },
       {
         type: "image-text",
-        text: "Le design du site s'inspire de l'esthétique cybernétique, avec des éléments visuels évoquant la technologie et la mémoire.",
+        text: "Le design du site s'inspire de l'esthétique cybernétique, avec des éléments visuels évoquant la technologie et la mémoire. De plus, ses compétences sont présentés sous forme de statistiques, afin d'évaluer mon niveau actuel dans les différents langages appris.",
         image: "/images/web/luxiss/2.png"
       },
       {
         type: "text-image",
-        text: "Le site est construit avec Astro, utilisant JavaScript et Tailwind CSS pour créer une interface fluide et responsive.",
+        text: "Le site est construit avec Astro, utilisant JavaScript et CSS pour créer une interface fluide et responsive. Le site est disponible en mode clair et en mode sombre, en fonction du mode du système. De plus, le format téléphone est disponible, affichant une interface plus simple.",
         image: "/images/web/luxiss/3.png"
       }
     ],
-    tech: ["astro", "JavaScript"],
+    tech: ["astro", "JavaScript", "CSS"],
     type: "Portfolio",
     duration: "6 mois"
   },
