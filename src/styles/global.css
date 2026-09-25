@@ -223,6 +223,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  min-width: 0;
   gap: 1.5rem;
 }
 
@@ -434,13 +436,14 @@ p.popup-links {
 
 #project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
   width: 100%;
 }
 
 .project-card {
   width: 100%;
+  min-width: 0;
   box-sizing: border-box;
   border: 2px solid var(--lx-accent-color);
   border-radius: 10px;
@@ -546,6 +549,7 @@ p.popup-links {
 .project-details {
   max-width: 900px;
   width: 100%;
+  min-width: 0;
   background-color: var(--lx-pane);
   border: 2px solid var(--lx-accent-color);
   padding: 2rem;
@@ -577,10 +581,12 @@ p.popup-links {
 
 .project-block .text {
   flex: 1 1 400px;
+  min-width: 0;
 }
 
 .project-block .image {
   flex: 1 1 400px;
+  min-width: 0;
   text-align: center;
 }
 
@@ -696,6 +702,8 @@ p.popup-links {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  min-width: 0;
   padding: 3rem;
   max-width: 1000px;
   margin: 0 auto;
@@ -821,7 +829,8 @@ p.popup-links {
   bottom: 120%;
   left: 50%;
   transform: translateX(-50%);
-  width: 360px;
+  width: min(360px, calc(100vw - 2rem));
+  max-width: 100%;
   background: var(--lx-pane);
   border: 2px solid var(--lx-accent-color);
   padding: 1rem;
@@ -948,8 +957,7 @@ footer a:hover {
     flex-direction: column;
     gap: 0.75rem;
     padding: 1rem;
-    margin-right: 2rem;
-    margin-left: 10rem;
+    margin: 0;
     background: var(--lx-pane);
     border: 2px solid var(--lx-accent-color);
     opacity: 0;
@@ -972,14 +980,20 @@ footer a:hover {
     text-align: center;
   }
 
-  main, .popup-content {
-    margin-right: 2rem;
-    margin-left: 2rem;
+  main {
+    width: 100%;
+    margin: 0;
+    padding: 0 1rem;
     font-size: 0.8rem;
   }
 
   #popup, #contact-popup {
-    padding: 5rem;
+    padding: 1rem;
+  }
+
+  .popup-content {
+    width: min(100%, 32rem);
+    max-width: 100%;
   }
 
   p.popup-links {
@@ -987,28 +1001,25 @@ footer a:hover {
     gap: 1rem;
 }
 
-  #filters {
-    width: 300px;
-  }
-
   .filter-button {
     font-size: 0.6rem;
   }
 
   #projects-page {
-    margin-right: 2rem;
-    margin-left: 2rem;
-    padding: 1rem 3rem 1rem 3rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 1rem 0;
   }
 
   #project-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
     width: 100%;
   }
 
-    .project-block {
+  .project-block {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
@@ -1025,9 +1036,13 @@ footer a:hover {
     max-width: 100px;
   }
 
+  .project-title,
   .skill-title {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    width: fit-content;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
   }
 
   #skills-page-content {
@@ -1035,20 +1050,38 @@ footer a:hover {
       flex-direction: column;
       align-items: center;
       width: 100%;
-      max-width: 450px;
+      max-width: 100%;
       height: 100%;
       gap: 2rem;
       margin-top: 1rem;
       margin-bottom: 1rem;
   }
 
+  #skills-page {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem 0;
+  }
+
   #skills-list, #skills-scroll {
-    width: 350px;
+    width: 100%;
+    max-width: 100%;
   }
 
   #avatar-section {
     margin-top: 0rem;
     margin-bottom: 4rem;
+  }
+
+  #rank-container {
+    right: 1rem;
+    transform: none;
+  }
+
+  #rank-popup {
+    left: auto;
+    right: 0;
+    transform: none;
   }
 
   #avatar-canvas, #error-canvas {

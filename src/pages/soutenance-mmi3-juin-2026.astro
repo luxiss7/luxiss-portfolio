@@ -1,7 +1,8 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+/* import BaseLayout from "../layouts/BaseLayout.astro"; */
 ---
 
+<!-- 
 <BaseLayout
   title="Soutenance MMI 2026"
   currentPage="soutenance-mmi3-juin-2026"
@@ -212,6 +213,63 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       padding: 10px 20px;
       color: var(--lx-accent-color);
       font-weight: bold;
+    }
+
+    @media (max-width: 760px) {
+      #soutenance-interface {
+        width: 100%;
+        padding: 1rem 0;
+        gap: 0.5rem;
+      }
+
+      #previous-button,
+      #next-button {
+        flex: 0 0 2rem;
+        height: 12rem;
+        padding: 0;
+      }
+
+      .soutenance-details {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        height: calc(100vh - 10rem);
+        padding: 1rem;
+        font-size: 1rem;
+      }
+
+      .slide.active {
+        padding: 0 0.5rem;
+      }
+
+      .title-slide h1 {
+        font-size: 1.5rem;
+      }
+
+      .title-slide p {
+        font-size: 1rem;
+      }
+
+      .soutenance-block,
+      .tree {
+        flex-wrap: wrap;
+        max-width: 100%;
+      }
+
+      .tree-box {
+        width: min(15rem, 100%);
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #slide-number {
+        right: 0.5rem;
+        bottom: 1rem;
+        padding: 0.5rem 0.75rem;
+      }
     }
   </style>
   <div id="soutenance-interface">
@@ -773,3 +831,4 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     updateSlides();
   </script>
 </BaseLayout>
+-->
