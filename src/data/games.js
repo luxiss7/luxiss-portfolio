@@ -1,3 +1,5 @@
+import { imageConfig } from "astro:assets";
+
 export const games = [
   {
     slug: "pokemon-death-life",
@@ -231,6 +233,66 @@ export const games = [
         techno: "Unity VR",
         note: "Version officielle rendue dans le cadre de ma formation",
         link: "https://drive.google.com/file/d/1xz7j_WfMUAcQl3IIWJNJ2wxIwJCOnbVO/view"
+      }
+    ]
+  },
+  {
+    slug: "kidd-update",
+    name: "Minecraft Kidd Update",
+    nickname: "Mise à jour fictive de Minecraft",
+    status: "perso", // "cours" | "perso" | "avenir"
+    shortDescription: "Un mod Minecraft rajoutant du contenu post-game dans l'End.",
+    description: [
+      {
+        type: "text-image",
+        text: "Ce mod Minecraft a tété réalisé avec Mcreator 2025.3 fonctionnant avec Neoforge 21.8.57.",
+        image: "/images/games/kidd-update/1.png"
+      },
+      {
+        type: "image-text",
+        text: "Il rajoute divers fonctionnalités post-game, dans les 3 dimensions, dans la version 1.21.8 de Minecraft.",
+        image: "/images/games/kidd-update/2.png"
+      },
+      {
+        type: "text-image",
+        text: "Le premier ajout est la Tomate, un nouveau légume cultivable dans l'overworld. Mais aussi la possibilté de faire du vinaigre de pomme, ou bien même du Fromage.",
+        image: "/images/games/kidd-update/3.png"
+      },
+      {
+        type: "image-text",
+        text: "Ce mod ajout aussi divers armes, dont des armes du Nether, possédant un pouvoir enflammé mais une durabilité réduite, mais des armes de l'End, qui sont inefficaces tant qu'elles ne sont pas imprégnées d'une énergie particulière.",
+        image: "/images/games/kidd-update/4.png"
+      },
+      {
+        type: "text-image",
+        text: "Un nouveau minerai peut aussi se trouver dans l'End, ayant des meilleurs propriétés que la Netherite.",
+        image: "/images/games/kidd-update/5.png"
+      },
+      {
+        type: "image-text",
+        text: "Un nouveau biome apparait aussi dans l'End, proposant de nouveaux mobs et de nouvelles structures.",
+        image: "/images/games/kidd-update/6.png"
+      },
+      {
+        type: "text-image",
+        text: "Le but ultime de cette mise à jour est de réaliser les 7 nouveaux progrès dans l'End.",
+        image: "/images/games/kidd-update/7.png"
+      },
+      {
+        type: "image-text",
+        text: "Complétez ces 7 défis et vous obtiendrez un nouveau Totem... à vous de découvrir son utilité.",
+        image: "/images/games/kidd-update/8.png"
+      }
+    ],
+    tech: ["Mcreator", "Blockbench", "Java", "json"],
+    genre: "Mod / Neoforge",
+    duration: "1 mois",
+    downloads: [
+      {
+        version: "1.0.0",
+        techno: "Mcreator",
+        note: "Première version avec NeoForge en 1.21.8",
+        link: "../games/downloads/kidd-1.0.0-neoforge-1.21.8.jar"
       }
     ]
   }

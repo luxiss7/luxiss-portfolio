@@ -161,6 +161,33 @@ const pageColors = {
       iaText: 'var(--lx-accent-light-color)',
       secondaryAccent: 'var(--lx-accent-dark-color)',
     }
+  },
+  'kidd-update': {
+    root: {
+      '--lx-white-color': '#f6fabd',
+      '--lx-light-color': '#eef6b4',
+      '--lx-black-color': '#1e1d1d',
+      '--lx-dark-color': '#2e2d2d',
+      '--lx-accent-color': '#bc0abc',
+      '--lx-accent-light-color': '#eb60eb',
+      '--lx-accent-dark-color': '#4a014a',
+    },
+    light: {
+      bg: 'var(--lx-light-color)',
+      pane: 'var(--lx-white-color)',
+      text: 'var(--lx-grey-dark-color)',
+      textFaint: 'var(--lx-grey-dark-color-transparent)',
+      iaText: 'var(--lx-accent-dark-color)',
+      secondaryAccent: 'var(--lx-accent-light-color)',
+    },
+    dark: {
+      bg: 'var(--lx-black-color)',
+      pane: 'var(--lx-dark-color)',
+      text: 'var(--lx-grey-light-color)',
+      textFaint: 'var(--lx-grey-light-color-transparent)',
+      iaText: 'var(--lx-accent-light-color)',
+      secondaryAccent: 'var(--lx-accent-dark-color)',
+    }
   }
 };
 
