@@ -1,12 +1,5 @@
 ---
-// @ts-ignore Astro runs this frontmatter in Node; keep this check usable without @types/node.
-import { existsSync } from "node:fs";
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const hasCvPdf = existsSync(new URL("../../public/documents/Lucas-Musy-CV.pdf", import.meta.url));
-const hasMotivationLetterPdf = existsSync(
-  new URL("../../public/documents/Lucas-Musy-Motivation.pdf", import.meta.url),
-);
 ---
 
 <BaseLayout title="Luxiss - Candidature">
@@ -30,19 +23,14 @@ const hasMotivationLetterPdf = existsSync(
       >
         Voir la lettre de motivation
       </button>
-      {(hasCvPdf || hasMotivationLetterPdf) && (
-        <a
-          id="document-download-button"
-          class="application-button"
-          href="/documents/Lucas-Musy-CV.pdf"
-          download="Lucas-Musy-CV.pdf"
-          data-cv-exists={hasCvPdf}
-          data-letter-exists={hasMotivationLetterPdf}
-          hidden={!hasCvPdf}
-        >
-          Télécharger le CV (PDF)
-        </a>
-      )}
+      <a
+        id="document-download-button"
+        class="application-button"
+        href="/documents/Lucas-Musy-CV.pdf"
+        download="Lucas-Musy-CV.pdf"
+      >
+        Télécharger le CV (PDF)
+      </a>
       </div>
 
     <div class="document-flip" id="document-flip">
@@ -94,18 +82,15 @@ const hasMotivationLetterPdf = existsSync(
       if (downloadButton) {
         const pdfExists = isFlipped
           ? {
-              exists: downloadButton.dataset.letterExists === "true",
               href: "/documents/Lucas-Musy-Motivation.pdf",
               filename: "Lucas-Musy-Motivation.pdf",
               label: "Télécharger le PDF (lettre)",
             }
           : {
-              exists: downloadButton.dataset.cvExists === "true",
               href: "/documents/Lucas-Musy-CV.pdf",
               filename: "Lucas-Musy-CV.pdf",
               label: "Télécharger le PDF (CV)",
             };
-        downloadButton.hidden = !pdfExists.exists;
         downloadButton.href = pdfExists.href;
         downloadButton.download = pdfExists.filename;
         downloadButton.textContent = pdfExists.label;
