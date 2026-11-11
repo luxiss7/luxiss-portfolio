@@ -33,7 +33,7 @@ export const games = [
         version: "0.1.0",
         techno: "Pokemon Studio",
         note: "Prototype de base",
-        link: "../games/downloads/pokemon-death-life-0.1.0.zip"
+        link: "../downloads/pokemon-death-life-0.1.0.zip"
       },
       {
         version: "0.2.0",
@@ -75,7 +75,7 @@ export const games = [
         version: "0.1.0",
         techno: "Processing",
         note: "Prototype de base",
-        link: "../games/downloads/laced-together-0.1.0.zip"
+        link: "../downloads/laced-together-0.1.0.zip"
       },
       {
         version: "0.2.0",
@@ -126,7 +126,7 @@ export const games = [
         version: "0.1.0",
         techno: "React",
         note: "Version officielle avec deux mini-jeux",
-        link: "../games/downloads/barcade-0.1.0.zip"
+        link: "../downloads/barcade-0.1.0.zip"
       }
     ]
   },
@@ -161,7 +161,7 @@ export const games = [
         version: "0.1.0",
         techno: "Unity",
         note: "Version officielle avec interactions RFID",
-        link: "../games/downloads/qui-vole-un-oeuf-0.1.0.zip"
+        link: "../downloads/qui-vole-un-oeuf-0.1.0.zip"
       },
       {
         version: "0.2.0",
@@ -292,7 +292,7 @@ export const games = [
         version: "1.0.0",
         techno: "Mcreator",
         note: "Première version avec NeoForge en 1.21.8",
-        link: "../games/downloads/kidd-1.0.0-neoforge-1.21.8.jar"
+        link: "../downloads/kidd-1.0.0-neoforge-1.21.8.jar"
       }
     ]
   }
