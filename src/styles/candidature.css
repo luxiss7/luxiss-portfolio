@@ -1,0 +1,66 @@
+.fragment-candidature {
+  animation: candidature-pulse 2.4s ease-in-out infinite;
+  border-width: 3px;
+  box-shadow: 0 0 10px rgb(134 58 203 / 35%);
+  position: relative;
+  translate: 0 0;
+}
+
+.fragment-candidature:hover,
+.fragment-candidature:focus-visible {
+  animation-play-state: paused;
+  color: var(--lx-text-color);
+  background: var(--lx-secondary-accent-color);
+  box-shadow: 0 0 24px rgb(134 58 203 / 75%);
+  filter: brightness(1.15);
+  translate: 0 0;
+}
+
+@keyframes candidature-pulse {
+  0%,
+  100% {
+    background: var(--lx-pane);
+    box-shadow: 0 0 10px rgb(134 58 203 / 35%);
+    filter: brightness(1);
+    translate: 0 0;
+  }
+
+  35% {
+    background: var(--lx-secondary-accent-color);
+    box-shadow: 0 0 22px rgb(134 58 203 / 75%);
+    filter: brightness(1.18);
+    translate: 0 -3px;
+  }
+
+  38% {
+    translate: -2px -3px;
+  }
+
+  41% {
+    translate: 2px -3px;
+  }
+
+  44% {
+    translate: -1px -3px;
+  }
+
+  47% {
+    translate: 1px -3px;
+  }
+
+  52% {
+    background: var(--lx-secondary-accent-color);
+    box-shadow: 0 0 22px rgb(134 58 203 / 75%);
+    filter: brightness(1.18);
+    translate: 0 -3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fragment-candidature {
+    animation: none;
+    background: var(--lx-secondary-accent-color);
+    box-shadow: 0 0 18px rgb(134 58 203 / 60%);
+    filter: brightness(1.1);
+  }
+}

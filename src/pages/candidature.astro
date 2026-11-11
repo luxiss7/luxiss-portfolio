@@ -1,0 +1,245 @@
+---
+// @ts-ignore Astro runs this frontmatter in Node; keep this check usable without @types/node.
+import { existsSync } from "node:fs";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const hasCv = existsSync(new URL("../../public/documents/Lucas-Musy-CV.pdf", import.meta.url));
+const hasMotivationLetter = existsSync(
+  new URL("../../public/documents/Lucas-Musy-Motivation.pdf", import.meta.url),
+);
+---
+
+<BaseLayout title="Luxiss - Candidature">
+  <section id="application-page">
+    <div class="application-title">
+      <h2>Fragment : Candidature</h2>
+      <p class="ia-voice">[Versa] &gt; Accès à la recherche d'emploi.</p>
+    </div>
+
+    <p class="application-intro">
+      Retrouvez mon CV et ma lettre de motivation. Retournez le document pour
+      découvrir ma lettre.
+    </p>
+
+    <div class="document-flip" id="document-flip">
+      <div class="document-flip-inner">
+        <section class="document-face document-front" aria-label="Curriculum vitæ">
+          {hasCv ? (
+            <iframe
+              src="/documents/Lucas-Musy-CV.pdf#view=Fit-page-width"
+              title="CV de Lucas Musy"
+              loading="lazy"
+            ></iframe>
+          ) : (
+            <div class="document-missing">
+              <p>Mon CV sera bientôt disponible ici.</p>
+              <p>Ajoutez le fichier <code>public/documents/Lucas-Musy-CV.pdf</code>.</p>
+            </div>
+          )}
+        </section>
+        <section
+          class="document-face document-back"
+          aria-label="Lettre de motivation"
+          aria-hidden="true"
+          inert
+        >
+          {hasMotivationLetter ? (
+            <iframe
+              src="/documents/Lucas-Musy-Motivation.pdf#view=Fit-page-width"
+              title="Lettre de motivation de Lucas Musy"
+              loading="lazy"
+              tabindex="-1"
+            ></iframe>
+          ) : (
+            <div class="document-missing">
+              <p>Ma lettre de motivation sera bientôt disponible ici.</p>
+              <p>Ajoutez le fichier <code>public/documents/Lucas-Musy-Motivation.pdf</code>.</p>
+            </div>
+          )}
+        </section>
+      </div>
+    </div>
+
+    <div class="application-actions">
+      <button
+        id="document-flip-button"
+        type="button"
+        aria-pressed="false"
+        aria-controls="document-flip"
+      >
+        Voir la lettre de motivation
+      </button>
+      <a href="/competences" class="application-button">Découvrir mes compétences</a>
+      <button id="application-contact-trigger" type="button">Me contacter</button>
+      </div>
+  <a href="/" id="enter-button">
+    <p>Retour à l'accueil</p>
+  </a>
+  </section>
+
+  <script>
+    const flip = document.querySelector<HTMLElement>("#document-flip");
+    const flipButton = document.querySelector<HTMLButtonElement>("#document-flip-button");
+    const front = document.querySelector<HTMLElement>(".document-front");
+    const back = document.querySelector<HTMLElement>(".document-back");
+    const contactTrigger = document.querySelector<HTMLButtonElement>("#application-contact-trigger");
+    const contactPopup = document.querySelector<HTMLElement>("#contact-popup");
+
+    flipButton?.addEventListener("click", () => {
+      const isFlipped = flip?.classList.toggle("is-flipped") ?? false;
+      flipButton.setAttribute("aria-pressed", String(isFlipped));
+      flipButton.textContent = isFlipped ? "Retourner au CV" : "Voir la lettre de motivation";
+      front?.toggleAttribute("inert", isFlipped);
+      front?.setAttribute("aria-hidden", String(isFlipped));
+      back?.toggleAttribute("inert", !isFlipped);
+      back?.setAttribute("aria-hidden", String(!isFlipped));
+      front?.querySelector("iframe")?.setAttribute("tabindex", isFlipped ? "-1" : "0");
+      back?.querySelector("iframe")?.setAttribute("tabindex", isFlipped ? "0" : "-1");
+    });
+
+    contactTrigger?.addEventListener("click", () => {
+      contactPopup?.classList.remove("hidden");
+    });
+  </script>
+
+  <style>
+    #application-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 1100px;
+      padding: 2rem;
+      gap: 1.5rem;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .application-title {
+      text-align: center;
+    }
+
+    .application-title h2 {
+      color: var(--lx-accent-color);
+      font-size: 2rem;
+    }
+
+    .application-intro {
+      text-align: center;
+      max-width: 60ch;
+    }
+
+    .document-flip {
+      width: min(100%, 900px);
+      aspect-ratio: 210 / 297;
+      perspective: 1600px;
+    }
+
+    .document-flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 700ms ease;
+    }
+
+    .document-flip.is-flipped .document-flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .document-face {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: var(--lx-pane);
+      border: 2px solid var(--lx-accent-color);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .document-back {
+      transform: rotateY(180deg);
+    }
+
+    .document-face iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: var(--lx-pane);
+    }
+
+    .document-missing {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      width: 100%;
+      height: 100%;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .document-missing code {
+      color: var(--lx-accent-color);
+      overflow-wrap: anywhere;
+    }
+
+    .application-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .application-actions button,
+    .application-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      background: var(--lx-pane);
+      border: 2px solid var(--lx-accent-color);
+      color: var(--lx-accent-color);
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .application-actions button:hover,
+    .application-button:hover {
+      background: var(--lx-accent-color);
+      color: var(--lx-pane);
+    }
+
+    @media (max-width: 600px) {
+      #application-page {
+        padding: 1rem;
+      }
+
+      .application-title h2 {
+        font-size: 1.5rem;
+      }
+
+      .application-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .application-actions button,
+      .application-button,
+      .application-actions #enter-button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .document-flip-inner {
+        transition: none;
+      }
+    }
+  </style>
+</BaseLayout>
