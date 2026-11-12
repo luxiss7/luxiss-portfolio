@@ -43,6 +43,9 @@ if (!game) {
       <h3>Informations techniques</h3>
       <ul>
         <li><strong>Technologies :</strong> {game.tech.join(", ")}</li>
+        {game.projectStyle?.length > 0 && (
+          <li><strong>Style / outils graphiques :</strong> {game.projectStyle.join(", ")}</li>
+        )}
         <li><strong>Cadre :</strong> {game.status}</li>
         <li><strong>Genre :</strong> {game.genre}</li>
         <li><strong>Durée :</strong> {game.duration}</li>

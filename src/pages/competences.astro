@@ -2,23 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import skillRank from "../scripts/skill_rank.js?url";
 import skillAvatar from "../scripts/skill_avatar.js?url";
-
-const skills = [
-    { name: "HTML/CSS", xp: 2000, category: "dev" },
-    { name: "JavaScript", xp: 1350, category: "dev" },
-    { name: "Unity", xp: 817, category: "dev" },
-    { name: "C#", xp: 806, category: "dev" },
-    { name: "Astro", xp: 135, category: "dev" },
-
-    { name: "Blender", xp: 30, category: "creation" },
-    { name: "Pixel Art", xp: 560, category: "creation" },
-    { name: "Game Design", xp: 110, category: "creation" },
-    { name: "UI/UX", xp: 600, category: "creation" },
-
-    { name: "Esprit d'équipe", xp: 865, category: "soft" },
-    { name: "Créativité", xp: 880, category: "soft" },
-    { name: "Autonomie", xp: 850, category: "soft" },
-];
+import { skillsWithProjectXp } from "../data/skills.js";
 ---
 
 <BaseLayout title="Luxiss - Compétences">
@@ -39,7 +23,7 @@ const skills = [
                     <button class="filter-button" data-filter="soft">Humain</button>
                 </div>
                 <div id="skills-scroll">
-                    {skills.map(skill => (
+                    {skillsWithProjectXp.map(skill => (
                     <div class="skill-card" data-xp={skill.xp} data-category={skill.category}>
                         <h2>{skill.name}</h2>
                         <p class="level-display"></p>

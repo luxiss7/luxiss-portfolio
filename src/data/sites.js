@@ -23,6 +23,8 @@ export const sites = [
       }
     ],
     tech: ["astro", "JavaScript", "CSS"],
+    workMode: "solo",
+    projectStyle: ["moderne", "Pixel Art"],
     type: "Portfolio",
     duration: "6 mois"
   },
@@ -85,6 +87,7 @@ export const sites = [
       }
     ],
     tech: ["php", "mustache", "TypeScript", "SCSS"],
+    projectStyle: ["moderne"],
     type: "Design",
     duration: "12 mois en alternance"
   },
@@ -112,6 +115,8 @@ export const sites = [
       }
     ],
     tech: ["HTML", "JavaScript"],
+    workMode: "solo",
+    projectStyle: ["Pixel Art"],
     type: "Jeu vidéo",
     duration: "1 mois",
     redirection: "/sites/greed-tower/index.html",

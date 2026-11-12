@@ -25,6 +25,8 @@ export const games = [
       }
     ],
     tech: ["PSDK", "Pokemon Studio", "RPG Maker", "Ruby"],
+    workMode: "solo",
+    projectStyle: ["Pixel Art"],
     genre: "RPG / Aventure",
     duration: "1 an",
     wiki: "https://pokemon-death-life.luxiss.fr",
@@ -33,7 +35,7 @@ export const games = [
         version: "0.1.0",
         techno: "Pokemon Studio",
         note: "Prototype de base",
-        link: "../downloads/pokemon-death-life-0.1.0.zip"
+        link: "downloads/pokemon-death-life-0.1.0.zip"
       },
       {
         version: "0.2.0",
@@ -67,6 +69,8 @@ export const games = [
       }
     ],
     tech: ["Processing", "Java"],
+    workMode: "team",
+    projectStyle: ["Pixel Art"],
     genre: "Puzzle / Coopératif",
     duration: "3 mois",
     // wiki: "https://laced-together.luxiss.fr",
@@ -75,7 +79,7 @@ export const games = [
         version: "0.1.0",
         techno: "Processing",
         note: "Prototype de base",
-        link: "../downloads/laced-together-0.1.0.zip"
+        link: "downloads/laced-together-0.1.0.zip"
       },
       {
         version: "0.2.0",
@@ -119,6 +123,8 @@ export const games = [
       }
     ],
     tech: ["React", "Javascript", "Arduino"],
+    workMode: "team",
+    projectStyle: ["moderne"],
     genre: "Arcade / Connecté",
     duration: "4 mois",
     downloads: [
@@ -126,7 +132,7 @@ export const games = [
         version: "0.1.0",
         techno: "React",
         note: "Version officielle avec deux mini-jeux",
-        link: "../downloads/barcade-0.1.0.zip"
+        link: "downloads/barcade-0.1.0.zip"
       }
     ]
   },
@@ -154,6 +160,8 @@ export const games = [
       }
     ],
     tech: ["Unity", "C#", "Arduino", "RFID"],
+    workMode: "team",
+    projectStyle: ["Pixel Art"],
     genre: "RPG / Connecté",
     duration: "6 mois",
     downloads: [
@@ -161,7 +169,7 @@ export const games = [
         version: "0.1.0",
         techno: "Unity",
         note: "Version officielle avec interactions RFID",
-        link: "../downloads/qui-vole-un-oeuf-0.1.0.zip"
+        link: "downloads/qui-vole-un-oeuf-0.1.0.zip"
       },
       {
         version: "0.2.0",
@@ -225,6 +233,8 @@ export const games = [
       }
     ],
     tech: ["Unity", "C#", "Lynx", "VR"],
+    workMode: "solo",
+    projectStyle: ["Blender", "Pixel Art"],
     genre: "VR / Arcade",
     duration: "1 mois",
     downloads: [
@@ -284,7 +294,9 @@ export const games = [
         image: "/images/games/kidd-update/8.png"
       }
     ],
-    tech: ["Mcreator", "Blockbench", "Java", "json"],
+    tech: ["Mcreator", "Java", "json"],
+    workMode: "solo",
+    projectStyle: ["Blockbench", "Pixel Art"],
     genre: "Mod / Neoforge",
     duration: "1 mois",
     downloads: [
@@ -292,7 +304,7 @@ export const games = [
         version: "1.0.0",
         techno: "Mcreator",
         note: "Première version avec NeoForge en 1.21.8",
-        link: "../downloads/kidd-1.0.0-neoforge-1.21.8.jar"
+        link: "downloads/kidd-1.0.0-neoforge-1.21.8.jar"
       }
     ]
   }
