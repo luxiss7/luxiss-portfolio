@@ -46,8 +46,9 @@ const ranks = [
   "Argent",
   "Or",
   "Platine",
+  "Rubis",
   "Diamant",
-  "Ruthénium",
+  "Émeraude",
   "Luxerite"
 ];
 

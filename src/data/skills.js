@@ -6,8 +6,8 @@ export const skills = [
   { name: "JavaScript", xp: 1190, category: "dev" },
   { name: "Unity", xp: 737, category: "dev" },
   { name: "C#", xp: 806, category: "dev" },
-  { name: "Astro", xp: 95, category: "dev" },
-  { name: "Java", xp: 0, category: "dev" },
+  { name: "Astro", xp: 45, category: "dev" },
+  { name: "Java", xp: 45, category: "dev" },
 
   { name: "Blender", xp: 30, category: "creation" },
   { name: "Blockbench", xp: 100, category: "creation" },
@@ -20,7 +20,7 @@ export const skills = [
   { name: "Autonomie", xp: 750, category: "soft" },
 ];
 
-const XP_PER_PROJECT_SKILL = 40;
+const XP_PER_PROJECT_SKILL = 20;
 
 const skillByProjectTag = new Map([
   ["html", "HTML/CSS"],
